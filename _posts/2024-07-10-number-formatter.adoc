@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "Number formatting support in Plurimath"
+date:   2024-07-10 00:00:00 +0800
+categories:
+  - plurimath
+  - using
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  **Plurimath** now offers more control and customization over how numbers are presented, enhancing both readability and precision using number formatting feature.
+---
+
+I’m excited to announce a new feature in the **Plurimath** gem that enhances its capabilities even further. This feature supports advanced number formatting, making your mathematical expressions more readable and customizable.
+
+**Number formatting** is based on locale, allowing you to format numbers according to different regional conventions. This ensures that your number formatting adheres to regional conventions, enhancing the readability and usability of your mathematical expressions across different languages and regions.
+
+=== Usage
+
+To utilize this new formatting feature in **Plurimath**, you’ll need to adjust the relevant options. Here’s a quick guide on how to do this:
+
+[source, ruby]
+----
+formatter = Plurimath::NumberFormatter.new(
+  <locale>,
+  localize_number: <localize_number>,
+  localizer_symbols: <localizer_symbols>,
+)
+formatter.localized_number(
+  <number_string>,
+  locale: <optional locale>,
+  precision: <optional | numeric value only>,
+  format: <format options hash>,
+)
+----
+Do not pass `locale` key to `localized_number` function if you want to the use `locale` from formatter object.
+Use following examples to understand the usage properly.
+
+[source, ruby]
+----
+formatter = Plurimath::NumberFormatter.new(
+  :en,
+  localize_number: nil,
+  localizer_symbols: {},
+)
+formatter.localized_number(
+  "1234.56789",
+  format: {
+    decimal: "x",
+    group: "'",
+    group_digits: 2
+    fraction_group: ",",
+    fraction_group_digits: 3
+  }
+) # => "12'34x567,89"
+----
+
+Note that the grouping, separator, and decimal symbol in output is just like the one passed.
+In next example, let's not pass anything and just use the locale's configuration.
+
+[source, ruby]
+----
+formatter.localized_number("1234.56789") # => "1,234.56789"
+----
+Now let's use different locale and precision only.
+[source, ruby]
+----
+formatter.localized_number("1234.56789", locale: :de, precision: 6) # => "1.234,567890"
+----
+
+Options are explained in detail below.
+
+* *decimal*: String value to change the default decimal point.
+* *group_digits*: Numeric value to group the integer part.
+* *group*: String value to place between each integer’s group.
+* *fraction_group_digits*: Numeric value to group the fraction part.
+* *fraction_group*: String value to place between each fraction’s group.
+* *digit_count*: Numeric value to set the total number of digits.
+* *significant*: Numeric value to round the number based on significant figures.
+* *notation*: String value any one of the following options.
+** **e**
+** **scientific**
+** **engineering**
+* *e*: String value for e-notation.
+* *times*: String value for engineering notation.
+* *exponent_sign*: String value for scientific notation.
+
+NOTE: Locales their default values are accessed from https://github.com/twitter/twitter-cldr-rb[twitter-cldr-rb].
