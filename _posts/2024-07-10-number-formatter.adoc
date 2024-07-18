@@ -26,33 +26,58 @@ I’m excited to announce a new feature in the **Plurimath** gem that enhances i
 
 **Number formatting** is based on locale, allowing you to format numbers according to different regional conventions. This ensures that your number formatting adheres to regional conventions, enhancing the readability and usability of your mathematical expressions across different languages and regions.
 
-=== Usage
+== Usage
 
-To utilize this new formatting feature in **Plurimath**, you’ll need to adjust the relevant options. Here’s a quick guide on how to do this:
+To utilize this new formatting feature, you’ll need to use some options. Here’s a quick guide on how to do this:
 
 [source, ruby]
 ----
 formatter = Plurimath::NumberFormatter.new(
   <locale>,
-  localize_number: <localize_number>,
-  localizer_symbols: <localizer_symbols>,
+  localize_number: <options | string>,
+  localizer_symbols: <options | format-options-hash>,
 )
 formatter.localized_number(
   <number_string>,
-  locale: <optional locale>,
-  precision: <optional | numeric value only>,
-  format: <format options hash>,
+  locale: <optional | locale>, # if not passed formatter's locale will be used
+  precision: <optional | numeric-value-only>, # if not passed precision will be set to the input's fraction digits count
+  format: <optional | format-options-hash>, # other optional options to change the default configuration of the locale
 )
 ----
-Do not pass `locale` key to `localized_number` function if you want to the use `locale` from formatter object.
-Use following examples to understand the usage properly.
 
+=== LocalizeNumber option
+
+The option `localize_number` expects string input containing a specific sequence of characters.
+
+Let's breakdown how `localize_number` example `"\#,\##0.\### \###"` will be interpreted:
+
+1. `group` very first non-hash character before 0, ',' in our example. Nil if there is no non-hash before #+0
+2. `group_digits` count of all hashes + 1(including the zero), '##0' in our example, which will be 3. Minimum 1 hash required
+3. `Decimal` The character next to "0", "." in our example, Must exist
+4. `fraction_group_digits` count of all the hashes right next to decimal, '\###' in our example, which will be 3. Minimum 1 hash required
+5. `fraction_group` first character after `fraction_group_digits`, in our example ' '(a space). Nil if there is no non-hash after `fraction_group_digits`
+
+=== LocalizerSymbols option
+
+The option `localizer_symbols` same as `format` does but with a slight difference.
+The values passed to `localizer_symbols` will be used until the initialized object is accessible, it is useful in the scenarios when configuration will be static or changes are not required very often.
+On the other hand, `format` options are required each time you call `localized_number`.
+
+Since we are supporting the configuration input in 4 different ways, it's important to clarify the structural hierarchy.
+The input will be prioritized in the following hierarchy.
+
+1. `format`
+2. `localize_number`
+3. `localizer_symbols`
+4. **default configuration**
+
+Use following examples to understand the `localized_number` method and it's options.
 [source, ruby]
 ----
 formatter = Plurimath::NumberFormatter.new(
   :en,
-  localize_number: nil,
-  localizer_symbols: {},
+  localize_number: nil,# 
+  localizer_symbols: {},# same options as format
 )
 formatter.localized_number(
   "1234.56789",
@@ -61,39 +86,43 @@ formatter.localized_number(
     group: "'",
     group_digits: 2
     fraction_group: ",",
-    fraction_group_digits: 3
+    fraction_group_digits: 3,
   }
 ) # => "12'34x567,89"
 ----
 
 Note that the grouping, separator, and decimal symbol in output is just like the one passed.
-In next example, let's not pass anything and just use the locale's configuration.
+In next example, let's use the locale's default configuration only.
 
 [source, ruby]
 ----
 formatter.localized_number("1234.56789") # => "1,234.56789"
 ----
-Now let's use different locale and precision only.
+Now let's change the locale for a specific number and add precision.
 [source, ruby]
 ----
 formatter.localized_number("1234.56789", locale: :de, precision: 6) # => "1.234,567890"
 ----
 
+=== Formatting supported options
+
 Options are explained in detail below.
 
-* *decimal*: String value to change the default decimal point.
-* *group_digits*: Numeric value to group the integer part.
-* *group*: String value to place between each integer’s group.
-* *fraction_group_digits*: Numeric value to group the fraction part.
-* *fraction_group*: String value to place between each fraction’s group.
-* *digit_count*: Numeric value to set the total number of digits.
-* *significant*: Numeric value to round the number based on significant figures.
-* *notation*: String value any one of the following options.
+* *decimal*: `String` value to change the default decimal point.
+* *group_digits*: `Numeric` value to group the integer part.
+* *group*: `String` value to place between each integer’s group.
+* *fraction_group_digits*: `Numeric` value to group the fraction part.
+* *fraction_group*: `String` value to place between each fraction’s group.
+* *digit_count*: `Numeric` value to set the total number of digits.
+* *significant*: `Numeric` value to round the number based on significant figures.
+* *notation*: `String` value any one of the following options.
 ** **e**
 ** **scientific**
 ** **engineering**
-* *e*: String value for e-notation.
-* *times*: String value for engineering notation.
-* *exponent_sign*: String value for scientific notation.
+* *e*: `String` value for e-notation.
+* *times*: `String` value for engineering notation.
+* *exponent_sign*: `String` value for scientific notation.
 
-NOTE: Locales their default values are accessed from https://github.com/twitter/twitter-cldr-rb[twitter-cldr-rb].
+NOTE: Locale support and relevant default settings are obtained from https://github.com/twitter/twitter-cldr-rb[twitter-cldr-rb].
+
+NOTE: The input type is specified for all the options. Using an input type other than the defined type could result in errors or incorrect output.
