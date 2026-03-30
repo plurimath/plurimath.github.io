@@ -1,0 +1,271 @@
+---
+layout: post
+title:  "Multi-line math rendering across formats with Plurimath"
+date:   2025-04-11 00:00:00 +0800
+categories:
+  - plurimath
+  - using
+authors:
+  -
+    name: Suleman Uzair
+    email: sulemanuzair600@gmail.com
+    social_links:
+      - https://github.com/suleman-uzair/
+  -
+    name: Ronald Tse
+    email: tse@ribose.com
+    use_picture: assets
+    social_links:
+      - https://www.linkedin.com/in/rhtse/
+      - https://github.com/ronaldtse
+excerpt: >-
+  **Plurimath** now supports line breaks in mathematical expressions across all
+  output formats, with the new `split_on_linebreak` option enabling proper
+  rendering in **MathML** and **OMML** outputs.
+---
+== Introduction
+
+Mathematical expressions sometimes span multiple lines. Whether it is a
+system of equations, a long derivation, or an aligned set of steps, line
+breaks are a natural part of how math is written and read.
+
+However, not all math representation formats handle line breaks equally.
+Some formats have native support, others have no concept of a line break at
+all, and some renderers simply ignore line break information even when the
+format supports it.
+
+**Plurimath** now provides unified line break support across all formats,
+including the `split_on_linebreak` option for formats that require equation
+splitting. This feature was introduced in
+https://github.com/plurimath/plurimath/pull/191[version 0.7.0].
+
+
+== Line break support across formats
+
+=== Formats with native line break support
+
+Only a few math representation formats natively support line breaks in their
+specification:
+
+* **MathML**: uses the `linebreak` attribute as part of the
+https://www.w3.org/TR/MathML3/[MathML 3] specification. This attribute is
+supported on `<mo>`, `<mspace>`, and `<mstyle>` elements
+(e.g., `<mo linebreak="newline"/>` or `<mspace linebreak="newline"/>`).
+
+* **UnicodeMath**: uses `&#xa;` (the Unicode line feed character) to indicate
+a line break.
+
+* **HTML**: uses `<br/>` for line breaks.
+
+
+=== Formats without native line break support
+
+Several formats do not support line breaks in their specification.
+**Plurimath** extends these formats with line break syntax to enable
+consistent multi-line equation handling:
+
+* **LaTeX**: the `\\` command in standard **LaTeX** is only used for line
+breaks within specific environments such as `align`, `gather`, and `array`.
+**Plurimath** recognizes `\\` as a general line break indicator in any
+**LaTeX** math expression.
+
+* **AsciiMath**: the AsciiMath specification has no line break syntax.
+**Plurimath** extends **AsciiMath** with `\` followed by a newline character
+to represent a line break.
+
+* **OMML**: Microsoft Word's Office Math Markup Language has no concept of a
+line break within a single equation. Word itself does not support rendering
+multiple lines in one `<m:oMath>` element. **Plurimath** addresses this by
+splitting multi-line expressions into separate `<m:oMath>` blocks.
+
+
+== Using `split_on_linebreak`
+
+The `split_on_linebreak` option is available on the `to_mathml` and `to_omml`
+output methods of a **Plurimath** Formula object. It splits a multi-line
+expression into multiple separate equation blocks at each line break point,
+ensuring correct rendering regardless of renderer limitations.
+
+=== Splitting MathML output
+
+By default, **MathML** output preserves line breaks using the native
+`linebreak` attribute. When `split_on_linebreak: true` is specified, the
+expression is instead split into separate `<math>` blocks.
+
+.Parsing **AsciiMath** with a line break and splitting **MathML** output
+[example]
+====
+Consider the expression stem:[bar X'] followed by a line break and then
+stem:[theta]. Using **Plurimath**'s extended **AsciiMath** line break syntax:
+
+[source,ruby]
+----
+formula = Plurimath::Math.parse("bar X' \\ \n theta", :asciimath)
+formula.to_mathml(split_on_linebreak: true)
+----
+
+The output splits at the line break into two `<math>` blocks:
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>X</mi>
+      <mo>&#xaf;</mo>
+    </mover>
+    <mo>&#x2032;</mo>
+  </mstyle>
+</math>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mi>&#x3b8;</mi>
+  </mstyle>
+</math>
+----
+====
+
+Without `split_on_linebreak`, the same formula produces a single `<math>` block
+with a `<mo linebreak="newline"/>` element instead:
+
+[source,xml]
+----
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true">
+    <mover>
+      <mi>X</mi>
+      <mo>&#xaf;</mo>
+    </mover>
+    <mo>&#x2032;</mo>
+    <mo linebreak="newline"/>
+    <mi>&#x3b8;</mi>
+  </mstyle>
+</math>
+----
+
+
+=== Splitting OMML output
+
+For **OMML**, the output produces multiple `<m:oMath>` elements within a single
+`<m:oMathPara>`, with `<m:r><br/></m:r>` elements placed between each block.
+
+.OMML output with `split_on_linebreak: true` using the same formula
+[example]
+====
+[source,ruby]
+----
+formula.to_omml(split_on_linebreak: true)
+----
+
+The output produces the following structure:
+
+[source,xml]
+----
+<m:oMathPara>
+  <m:oMath>
+    <m:bar>
+      <m:barPr>
+        <m:pos m:val="top"/>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:i/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:barPr>
+      <m:e>
+        <m:r>
+          <m:t>X</m:t>
+        </m:r>
+      </m:e>
+    </m:bar>
+    <m:r>
+      <m:t>&#x2032;</m:t>
+    </m:r>
+  </m:oMath>
+  <m:r>
+    <br/>
+  </m:r>
+  <m:oMath>
+    <m:r>
+      <m:t>&#x3b8;</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+----
+
+NOTE: The XML namespace attributes on `<m:oMathPara>` have been omitted for
+brevity. The actual output includes the full set of OOXML namespace
+declarations.
+
+This structure renders correctly in Microsoft Word as a multi-line equation.
+====
+
+
+=== Multiple line breaks
+
+Expressions can contain more than one line break. Each line break produces an
+additional output block. For example, an expression with three line breaks
+produces four separate `<math>` blocks in **MathML** (or four `<m:oMath>`
+elements in **OMML**).
+
+
+== Summary of format support
+
+The following table summarizes line break support across **Plurimath**'s
+supported formats:
+
+[cols="1,1,1,1", options="header"]
+|===
+| Format | Line break syntax | Native to spec? | `split_on_linebreak` supported?
+
+| **MathML**
+| `linebreak` attribute on `<mo>`, `<mspace>`, `<mstyle>`
+| Yes (MathML 3)
+| Yes (optional, for consistent rendering)
+
+| **UnicodeMath**
+| `&#xa;` (line feed character)
+| Yes
+| No
+
+| **HTML**
+| `<br/>`
+| Yes
+| No
+
+| **LaTeX**
+| `\\`
+| No (Plurimath extension)
+| No
+
+| **AsciiMath**
+| `\` followed by newline
+| No (Plurimath extension)
+| No
+
+| **OMML**
+| None
+| No
+| Yes (required for multi-line equations)
+|===
+
+
+== Conclusion
+
+The `split_on_linebreak` option in **Plurimath** bridges the gap between math
+formats that natively support line breaks and those that do not. By
+intelligently splitting multi-line expressions at line break points, it
+ensures that equations render correctly across all output formats and
+renderers, including Microsoft Word's **OMML**.
+
+For formats that lack native line break support, such as **AsciiMath** and
+**LaTeX**, **Plurimath** provides extended syntax so that line breaks can be
+represented and round-tripped across all supported math languages.
+
+This feature is available in **Plurimath** version 0.7.0 and later.
+
+For bug reports and feature requests, please report them at the
+https://github.com/plurimath/plurimath/issues[Plurimath Issues page] on GitHub.
+
+With Plurimath, we make math look good -- one feature at a time!
