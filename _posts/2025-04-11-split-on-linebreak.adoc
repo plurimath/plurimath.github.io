@@ -95,7 +95,7 @@ expression is instead split into separate `<math>` blocks.
 .Parsing **AsciiMath** with a line break and splitting **MathML** output
 [example]
 ====
-Consider the expression stem:[bar X '] followed by a line break and then
+Consider the expression stem:[bar X'] followed by a line break and then
 stem:[theta]. Using **Plurimath**'s extended **AsciiMath** line break syntax:
 
 [source,ruby]
