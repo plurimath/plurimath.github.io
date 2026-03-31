@@ -119,7 +119,7 @@ To MathML:
 
 Plurimath.js, the Javascript version of Plurimath is available at:
 
-* Javascript: https://www.plurimath.org/plurimath-js/dist/index.js[`index.js`]
+* Javascript: https://www.plurimath.org/javascript/plurimath-js/dist/index.js[`index.js`]
 * NPM package: https://www.npmjs.com/package/@plurimath/plurimath[`@plurimath/plurimath`]
 
 === Web applications
@@ -127,7 +127,7 @@ Plurimath.js, the Javascript version of Plurimath is available at:
 [source,html]
 ----
 <script type="module">
-  import Plurimath from "https://www.plurimath.org/plurimath-js/dist/index.js";
+  import Plurimath from "https://www.plurimath.org/javascript/plurimath-js/dist/index.js";
 
   const formula = new Plurimath('ubrace(1+2+3+4)_("4 terms")', "asciimath");
   console.log(formula.toLatex());

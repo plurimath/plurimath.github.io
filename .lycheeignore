@@ -4,4 +4,5 @@ https://twitter.com/RiboseUS
 .*@.*example.com
 (ht|f)tps?://.*\.?example\.(com|org).*
 https://.*\.?plurimath\.(com|org).*
-https://gravatar.com/*
+https://gravatar\.com/.*
+https?://(?:www\.)?npmjs\.com(/.*)?
