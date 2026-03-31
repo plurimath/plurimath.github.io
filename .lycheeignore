@@ -5,3 +5,4 @@ https://twitter.com/RiboseUS
 (ht|f)tps?://.*\.?example\.(com|org).*
 https://.*\.?plurimath\.(com|org).*
 https://gravatar.com/*
+https?://(?:www\.)?npmjs\.com(/.*)?
