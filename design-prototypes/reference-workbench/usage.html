@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Install Plurimath and complete a first Ruby or JavaScript conversion.">
+  <title>Getting started — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="usage">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <div class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Guide</span><span>Getting started</span></nav>
+    </div>
+    <div class="docs-layout">
+      <aside class="docs-nav" aria-label="Guide navigation">
+        <section><h2>Start</h2><a href="usage.html" aria-current="page">Getting started</a><a href="#ruby">Ruby</a><a href="#javascript">JavaScript</a></section>
+        <section><h2>Next</h2><a href="converter.html">Conversion workbench</a><a href="api.html">API reference</a><a href="functions.html">Functions</a></section>
+      </aside>
+
+      <article class="docs-content">
+        <p class="eyebrow">Tutorial / First success</p>
+        <h1>Getting started</h1>
+        <p class="lede">Install Plurimath, parse one expression, and serialize it into another mathematical representation.</p>
+
+        <div class="notice" role="note"><span class="status-badge status-badge--live">Goal</span><p>By the end, <code>sin(1)</code> will exist as a formula object and serialize to LaTeX or MathML.</p></div>
+
+        <h2 id="ruby">Ruby</h2>
+        <h3>1. Install the gem</h3>
+        <p>Add Plurimath to your application’s <code>Gemfile</code>, then install dependencies.</p>
+        <div class="code-panel">
+          <div class="code-panel__header"><span>Gemfile</span><button class="copy-button" type="button" data-copy-target="#ruby-install">Copy</button></div>
+          <pre id="ruby-install"><code>gem "plurimath"</code></pre>
+        </div>
+
+        <h3>2. Parse a source expression</h3>
+        <p><code>Plurimath::Math.parse</code> accepts the source string and its representation type.</p>
+        <div class="code-panel">
+          <div class="code-panel__header"><span>Ruby</span><button class="copy-button" type="button" data-copy-target="#ruby-parse">Copy</button></div>
+          <pre id="ruby-parse"><code>asciimath = "sin(1)"
+formula = Plurimath::Math.parse(asciimath, :asciimath)
+
+formula.to_latex
+# =&gt; "\\sin1"</code></pre>
+        </div>
+
+        <h3>3. Choose another serializer</h3>
+        <p>The same formula object can serialize to AsciiMath, LaTeX, MathML, UnicodeMath, HTML, or OMML.</p>
+        <div class="math-display panel">
+          <math display="block" aria-label="sine of one"><mrow><mi>sin</mi><mo>⁡</mo><mo>(</mo><mn>1</mn><mo>)</mo></mrow></math>
+        </div>
+
+        <h2 id="javascript">JavaScript</h2>
+        <h3>Install from npm</h3>
+        <div class="code-panel">
+          <div class="code-panel__header"><span>Shell</span><button class="copy-button" type="button" data-copy-target="#npm-install">Copy</button></div>
+          <pre id="npm-install"><code>npm install -S @plurimath/plurimath</code></pre>
+        </div>
+
+        <h3>Use the ES module</h3>
+        <div class="code-panel">
+          <div class="code-panel__header"><span>JavaScript</span><button class="copy-button" type="button" data-copy-target="#javascript-example">Copy</button></div>
+          <pre id="javascript-example"><code>import Plurimath from "@plurimath/plurimath";
+
+const formula = new Plurimath(
+  'ubrace(1+2+3+4)_("4 terms")',
+  "asciimath"
+);
+
+console.log(formula.toLatex());</code></pre>
+        </div>
+
+        <h2 id="next">Choose the next task</h2>
+        <p>Use the browser workbench to inspect conversions, or open the reference when you already know what syntax you need.</p>
+        <div class="button-row"><a class="button" href="converter.html">Open the converter</a><a class="button-secondary" href="api.html">Read the API</a></div>
+      </article>
+
+      <aside class="docs-toc" aria-label="On this page"><h2>On this page</h2><nav><a href="#ruby">Ruby</a><a href="#javascript">JavaScript</a><a href="#next">Next task</a></nav></aside>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Plurimath Ruby and JavaScript API reference prototype.">
+  <title>API reference — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="api">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <div class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Reference</span><span>API</span></nav>
+    </div>
+    <div class="docs-layout">
+      <aside class="docs-nav" aria-label="API navigation">
+        <section><h2>JavaScript</h2><a href="#javascript" aria-current="page">Browser surface</a><a href="#constructor">Constructor</a><a href="#serializers">Serializers</a></section>
+        <section><h2>Ruby</h2><a href="#ruby">Parse and serialize</a><a href="#mathml-options">MathML arguments</a><a href="#formatter-api">NumberFormatter</a></section>
+      </aside>
+
+      <article class="docs-content">
+        <p class="eyebrow">Reference / Public methods</p>
+        <h1>API reference</h1>
+        <p class="lede">Start with the runtime you use. Browser methods are separated from Ruby-only arguments so the interface never implies parity that does not exist.</p>
+
+        <h2 id="javascript">JavaScript browser surface</h2>
+        <div class="notice"><span class="status-badge status-badge--live">Exact surface</span><p>These methods come from the local <code>dist/index.d.ts</code> facade used by the converter.</p></div>
+        <div class="method-list">
+          <section class="panel method-card" id="constructor">
+            <div class="panel-header"><h3>Constructor</h3><span class="format-badge">JavaScript</span></div>
+            <div class="method-signature">new Plurimath(data: string, format: Format)</div>
+            <div class="panel-body"><p>Parses source data in AsciiMath, LaTeX, MathML, HTML, UnicodeMath, or OMML and stores the formula model.</p></div>
+          </section>
+          <section class="panel method-card" id="serializers">
+            <div class="panel-header"><h3>Serializers</h3><span class="format-badge">JavaScript</span></div>
+            <div class="method-signature">toAsciimath() · toLatex() · toMathml(intent?) · toHtml() · toOmml() · toUnicodemath()</div>
+            <div class="panel-body"><p>Each serializer returns a string. The browser facade currently exposes one direct serializer argument: optional semantic intent for MathML.</p></div>
+          </section>
+          <section class="panel method-card">
+            <div class="panel-header"><h3>Display helper</h3><span class="format-badge">JavaScript</span></div>
+            <div class="method-signature">toDisplay(lang: string)</div>
+            <div class="panel-body"><p>Returns a display representation using the requested language identifier.</p></div>
+          </section>
+        </div>
+
+        <h2 id="ruby">Ruby parse and serialize</h2>
+        <section class="panel method-card">
+          <div class="panel-header"><h3>Plurimath::Math.parse</h3><span class="format-badge">Ruby</span></div>
+          <div class="method-signature">Plurimath::Math.parse(source, type, locale: ...)</div>
+          <div class="panel-body"><p>Parses a source expression into a <code>Plurimath::Math::Formula</code>. Locale applies to supported text inputs.</p></div>
+        </section>
+
+        <h2 id="mathml-options">MathML serializer arguments</h2>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Argument</th><th>Purpose</th><th>Browser facade</th></tr></thead>
+            <tbody>
+              <tr><td><code>intent:</code></td><td>Include semantic MathML intent.</td><td><span class="status-badge status-badge--live">Live</span></td></tr>
+              <tr><td><code>formatter:</code></td><td>Format numeric nodes using a compatible formatter.</td><td><span class="status-badge status-badge--concept">Ruby only</span></td></tr>
+              <tr><td><code>unitsml:</code></td><td>Configure UnitsML-aware output.</td><td><span class="status-badge status-badge--concept">Ruby only</span></td></tr>
+              <tr><td><code>display_style:</code></td><td>Choose display-style layout.</td><td><span class="status-badge status-badge--concept">Ruby only</span></td></tr>
+              <tr><td><code>split_on_linebreak:</code></td><td>Split output at represented line breaks.</td><td><span class="status-badge status-badge--concept">Ruby only</span></td></tr>
+              <tr><td><code>unary_function_spacing:</code></td><td>Control spacing around unary functions.</td><td><span class="status-badge status-badge--concept">Ruby only</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="formatter-api">NumberFormatter</h2>
+        <section class="panel method-card">
+          <div class="panel-header"><h3>Reusable locale-first formatter</h3><span class="format-badge">Ruby</span></div>
+          <div class="method-signature">Plurimath::NumberFormatter.new(locale, localize_number: nil, localizer_symbols: {}, precision: nil)</div>
+          <div class="panel-body"><p>Creates a reusable number formatter. Call <code>localized_number</code> directly or pass the object into a formula serializer.</p><a href="formatter.html">Design a formatter profile →</a></div>
+        </section>
+      </article>
+
+      <aside class="docs-toc" aria-label="On this page"><h2>On this page</h2><nav><a href="#javascript">JavaScript</a><a href="#ruby">Ruby</a><a href="#mathml-options">MathML arguments</a><a href="#formatter-api">NumberFormatter</a></nav></aside>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

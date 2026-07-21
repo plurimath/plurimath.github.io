@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Article-layout prototype using Plurimath's number-formatting documentation.">
+  <title>Number formatting support — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="article" data-nav-group="blog">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <div class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="blog.html">Blog</a></span><span>Number formatting</span></nav>
+    </div>
+    <div class="article-shell">
+      <article>
+        <p class="eyebrow">Using Plurimath / 10 July 2024</p>
+        <h1 class="article-title">Number formatting support in Plurimath</h1>
+        <div class="article-meta"><span>Suleman Uzair</span><span>Ronald Tse</span></div>
+
+        <div class="article-body">
+          <p class="lede">Plurimath now offers precise control over how numbers are presented, enhancing both readability and precision using the number-formatting feature.</p>
+
+          <h2 id="why">Why formatting belongs with the formula</h2>
+          <p>A decimal point, digit grouping delimiter, and scientific notation are not universal presentation choices. A document may require <code>1,234,567.89</code>, <code>1.234.567,89</code>, or grouped thin spaces while preserving the same numeric value.</p>
+          <p>A reusable formatter keeps those decisions together and lets multiple serializers apply them consistently.</p>
+
+          <div class="math-display panel">
+            <math display="block" aria-label="one point two three four five six seven eight nine times ten to the eighth power"><mrow><mn>1.23456789</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow></math>
+          </div>
+
+          <h2 id="create">Create a formatter</h2>
+          <p>Create a <code>Plurimath::NumberFormatter</code> with a locale, then override only the symbols or precision your publication needs.</p>
+          <div class="code-panel">
+            <div class="code-panel__header"><span>Ruby</span><button class="copy-button" type="button" data-copy-target="#article-formatter-code">Copy</button></div>
+            <pre id="article-formatter-code"><code>formatter = Plurimath::NumberFormatter.new(
+  :fr,
+  precision: 2,
+  localizer_symbols: {
+    decimal: ",",
+    group: " ",
+    group_digits: 3,
+  }
+)
+
+formatter.localized_number("1234.56789")</code></pre>
+          </div>
+
+          <h2 id="formula">Apply it to a formula</h2>
+          <p>The same formatter object can be passed to formula serializers. This keeps number presentation aligned across AsciiMath, LaTeX, MathML, OMML, and UnicodeMath.</p>
+          <div class="code-panel">
+            <div class="code-panel__header"><span>Ruby</span><button class="copy-button" type="button" data-copy-target="#article-formula-code">Copy</button></div>
+            <pre id="article-formula-code"><code>formula = Plurimath::Math.parse(
+  "sum_(i=1)^10000 i^2121221",
+  :asciimath
+)
+
+formula.to_latex(formatter: formatter)</code></pre>
+          </div>
+
+          <h2 id="design">Try the profile interaction</h2>
+          <p>The formatter prototype turns this API into named browser-local profiles. It does not claim browser execution, but it makes the configuration legible and reusable before production integration.</p>
+          <a class="button" href="formatter.html">Open the formatter prototype</a>
+        </div>
+      </article>
+
+      <aside class="article-aside" aria-label="Article information">
+        <p class="eyebrow">In this article</p>
+        <p><a href="#why">Why formatting matters</a></p>
+        <p><a href="#create">Create a formatter</a></p>
+        <p><a href="#formula">Apply it to a formula</a></p>
+        <p><a href="#design">Try the interaction</a></p>
+        <hr style="border: 0; border-top: 1px solid var(--rule); margin-block: var(--space-5)">
+        <p>Prototype copy is condensed from the existing July 2024 project article.</p>
+      </aside>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="The Plurimath abs function across AsciiMath, LaTeX, MathML, OMML, and UnicodeMath.">
+  <title>abs function — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="function" data-nav-group="functions">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span><a href="functions.html">Functions</a></span><span>abs</span></nav>
+      <div class="record-heading">
+        <div>
+          <p class="eyebrow">Function / Unary / Numeric</p>
+          <h1 class="record-title">abs</h1>
+          <p>Wraps an expression as an absolute value.</p>
+        </div>
+        <div class="record-actions">
+          <button class="button-secondary" type="button" data-copy-value="abs(x)" data-copy-message="AsciiMath copied">Copy syntax</button>
+          <a class="button" href="converter.html?sample=abs">Open in converter <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="record-shell">
+      <div class="record-main">
+        <section class="panel representation-record" aria-labelledby="representations-title">
+          <div class="panel-header">
+            <h2 id="representations-title">Representations</h2>
+            <span class="status-badge record-format-count">5 formats</span>
+          </div>
+          <div class="tabs" role="tablist" aria-label="abs representations" data-tab-group="abs-representations">
+            <button class="tab-button" type="button" role="tab" aria-selected="true" data-tab="asciimath" data-format="asciimath">AsciiMath</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="latex" data-format="latex">LaTeX</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="mathml" data-format="mathml">MathML</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="omml" data-format="omml">OMML</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="unicodemath" data-format="unicodemath">UnicodeMath</button>
+          </div>
+          <p class="tab-scroll-hint">Swipe for more formats →</p>
+
+          <div class="representation-record__view" data-tab-panel-group="abs-representations" data-tab-panel="asciimath">
+            <div class="representation-record__preview">
+              <math display="block" aria-label="absolute value of x"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math>
+            </div>
+            <div class="representation-record__source">
+              <p class="eyebrow">AsciiMath source</p>
+              <pre id="abs-asciimath"><code>abs(x)</code></pre>
+              <button class="button-quiet" type="button" data-copy-target="#abs-asciimath" data-copy-message="AsciiMath copied">Copy AsciiMath</button>
+            </div>
+          </div>
+          <div class="representation-record__view" data-tab-panel-group="abs-representations" data-tab-panel="latex" hidden>
+            <div class="representation-record__preview"><math display="block" aria-label="absolute value of x"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math></div>
+            <div class="representation-record__source"><p class="eyebrow">LaTeX source</p><pre id="abs-latex"><code>\abs{x}</code></pre><button class="button-quiet" type="button" data-copy-target="#abs-latex" data-copy-message="LaTeX copied">Copy LaTeX</button></div>
+          </div>
+          <div class="representation-record__view" data-tab-panel-group="abs-representations" data-tab-panel="mathml" hidden>
+            <div class="representation-record__preview"><math display="block" aria-label="absolute value of x"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math></div>
+            <div class="representation-record__source"><p class="eyebrow">MathML source</p><pre id="abs-mathml"><code>&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="block"&gt;
+  &lt;mstyle displaystyle="true"&gt;
+    &lt;mrow&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&lt;/mo&gt;&lt;/mrow&gt;
+  &lt;/mstyle&gt;
+&lt;/math&gt;</code></pre><button class="button-quiet" type="button" data-copy-target="#abs-mathml" data-copy-message="MathML copied">Copy MathML</button></div>
+          </div>
+          <div class="representation-record__view" data-tab-panel-group="abs-representations" data-tab-panel="omml" hidden>
+            <div class="representation-record__preview"><math display="block" aria-label="absolute value of x"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math></div>
+            <div class="representation-record__source"><p class="eyebrow">OMML source</p><pre id="abs-omml"><code>&lt;m:d&gt;
+  &lt;m:dPr&gt;
+    &lt;m:begChr m:val="|"/&gt;
+    &lt;m:endChr m:val="|"/&gt;
+  &lt;/m:dPr&gt;
+  &lt;m:e&gt;&lt;m:r&gt;&lt;m:t&gt;x&lt;/m:t&gt;&lt;/m:r&gt;&lt;/m:e&gt;
+&lt;/m:d&gt;</code></pre><button class="button-quiet" type="button" data-copy-target="#abs-omml" data-copy-message="OMML copied">Copy OMML</button></div>
+          </div>
+          <div class="representation-record__view" data-tab-panel-group="abs-representations" data-tab-panel="unicodemath" hidden>
+            <div class="representation-record__preview"><math display="block" aria-label="absolute value of x"><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math></div>
+            <div class="representation-record__source"><p class="eyebrow">UnicodeMath source</p><pre id="abs-unicodemath"><code>⒜(x)</code></pre><button class="button-quiet" type="button" data-copy-target="#abs-unicodemath" data-copy-message="UnicodeMath copied">Copy UnicodeMath</button></div>
+          </div>
+        </section>
+
+        <nav class="record-neighbors" aria-label="Adjacent functions">
+          <a class="neighbor-link" href="functions.html"><small>Previous record</small><strong>array</strong></a>
+          <a class="neighbor-link" href="functions.html"><small>Next record</small><strong>align</strong></a>
+        </nav>
+      </div>
+
+      <aside class="record-sidebar" aria-label="Function metadata">
+        <section class="panel meta-panel">
+          <h2>Record</h2>
+          <dl class="meta-list">
+            <div><dt>Arity</dt><dd>Unary</dd></div>
+            <div><dt>Category</dt><dd>Numeric</dd></div>
+            <div><dt>Source</dt><dd><code>functions/abs.adoc</code></dd></div>
+            <div><dt>Coverage</dt><dd>5 representations</dd></div>
+          </dl>
+        </section>
+        <section class="panel meta-panel">
+          <h2>Direct actions</h2>
+          <p class="muted">Copy a documented syntax or send the AsciiMath example to the converter.</p>
+          <a href="api.html" class="button-quiet">View serializer API →</a>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

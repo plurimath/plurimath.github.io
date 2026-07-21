@@ -1,0 +1,18 @@
+<dialog class="search-dialog" data-search-dialog aria-labelledby="search-dialog-title">
+  <div class="search-dialog__top">
+    <div>
+      <p class="eyebrow">Search the site</p>
+      <h2 id="search-dialog-title">Find a page or record</h2>
+    </div>
+    <button class="icon-button" type="button" data-close-search aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button>
+  </div>
+  <label class="search-field search-field--large">
+    <span class="sr-only">Search pages, functions, symbols, and tools</span>
+    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+    <input type="search" name="site-search" data-search-input placeholder="Try “abs”, “MathML”, or “formatter”…" autocomplete="off">
+  </label>
+  <p class="search-dialog__hint">Search covers this prototype’s pages and representative records.</p>
+  <div class="search-results" data-search-results aria-live="polite"></div>
+</dialog>
+
+<div class="toast" data-toast role="status" aria-live="polite" hidden></div>

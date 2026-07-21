@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Browse Plurimath functions by arity and representation coverage.">
+  <title>Functions — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/catalogs.js"></script>
+</head>
+<body data-page="functions">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Functions</span></nav>
+      <p class="eyebrow">Reference / 108 records</p>
+      <h1>Functions</h1>
+      <p class="lede">Search documented mathematical functions, filter by arity, and compare their syntax across representations.</p>
+    </header>
+
+    <div class="catalog-shell" data-function-catalog>
+      <aside class="catalog-sidebar catalog-sidebar--functions" aria-label="Function filters">
+        <section class="catalog-sidebar__group">
+          <h2>Arity</h2>
+          <div class="filter-list">
+            <button class="filter-button" type="button" aria-pressed="true" data-function-filter="all"><span>All functions</span><small>108</small></button>
+            <button class="filter-button" type="button" aria-pressed="false" data-function-filter="unary"><span>Unary</span><small>81</small></button>
+            <button class="filter-button" type="button" aria-pressed="false" data-function-filter="binary"><span>Binary</span><small>18</small></button>
+            <button class="filter-button" type="button" aria-pressed="false" data-function-filter="ternary"><span>Ternary</span><small>9</small></button>
+          </div>
+        </section>
+        <section class="catalog-sidebar__group">
+          <h2>Prototype scope</h2>
+          <p>Twelve representative records demonstrate the catalog. Production would generate all records from <code>functions/*.adoc</code>.</p>
+        </section>
+      </aside>
+
+      <section class="catalog-main" aria-labelledby="function-results-title">
+        <h2 class="sr-only" id="function-results-title">Function results</h2>
+        <div class="chip-row mobile-catalog-filters" aria-label="Filter functions by arity">
+          <button class="chip" type="button" aria-pressed="true" data-function-filter="all">All · 108</button>
+          <button class="chip" type="button" aria-pressed="false" data-function-filter="unary">Unary · 81</button>
+          <button class="chip" type="button" aria-pressed="false" data-function-filter="binary">Binary · 18</button>
+          <button class="chip" type="button" aria-pressed="false" data-function-filter="ternary">Ternary · 9</button>
+        </div>
+        <div class="catalog-toolbar">
+          <label class="search-field">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+            <span class="sr-only">Search functions</span>
+            <input type="search" name="function-search" placeholder="Search abs, matrix, sum…" data-function-search autocomplete="off">
+          </label>
+          <p class="catalog-count" data-function-count aria-live="polite">Showing 12 prototype records</p>
+        </div>
+        <div class="catalog-grid" data-function-results></div>
+      </section>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

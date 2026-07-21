@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Design and persist Plurimath NumberFormatter profiles locally.">
+  <title>Number formatter — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/formatter.js"></script>
+</head>
+<body data-page="formatter">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Tools</span><span>Number formatter</span></nav>
+      <p class="eyebrow">Tool / Persistent browser profiles</p>
+      <h1>Number formatter</h1>
+      <p class="lede">Create named publication profiles, compare their output, and copy the corresponding Ruby configuration.</p>
+    </header>
+
+    <details class="notice notice--warning tool-boundary" role="note">
+      <summary><span class="status-badge status-badge--concept">Prototype</span><strong>Persistent profiles; Ruby executes.</strong></summary>
+      <p>The JavaScript preview approximates common settings. The generated Ruby call describes the intended Plurimath API; the current browser facade does not expose NumberFormatter execution.</p>
+    </details>
+
+    <div class="formatter-layout" data-formatter data-arrange-surface="formatter-workbench" aria-label="Number formatter workbench layout">
+      <aside class="panel profile-panel" aria-labelledby="profiles-title" data-arrange-item="profiles" data-arrange-label="Profiles panel">
+        <div class="panel-header"><h2 id="profiles-title">Profiles</h2><span class="status-badge" data-storage-status>Local</span></div>
+        <div class="profile-list" data-profile-list></div>
+        <div class="profile-actions">
+          <button class="button-quiet" type="button" data-profile-create>+ New</button>
+          <button class="button-quiet" type="button" data-profile-duplicate>Duplicate</button>
+          <button class="button-quiet button-danger" type="button" data-profile-delete>Delete</button>
+        </div>
+      </aside>
+
+      <section class="panel formatter-preview-panel" aria-labelledby="formatter-preview-title" data-arrange-item="preview" data-arrange-label="Preview panel">
+          <div class="panel-header"><h2 id="formatter-preview-title">Preview</h2><span class="status-badge">Browser approximation</span></div>
+          <div class="formatter-preview">
+            <output data-formatter-output role="status" aria-live="polite">1,234.568</output>
+            <small data-preview-note>Settings only are stored. Formula history is never persisted.</small>
+          </div>
+      </section>
+
+      <section class="panel formatter-settings-panel" aria-labelledby="formatter-settings-title" data-arrange-item="settings" data-arrange-label="Profile settings panel">
+          <div class="panel-header"><h2 id="formatter-settings-title">Profile settings</h2><span class="muted" data-save-status aria-live="polite">Saved locally</span></div>
+          <div class="panel-body">
+            <div class="form-grid">
+              <label class="field"><span>Profile name</span><input type="text" name="profile-name" data-profile-name maxlength="60" autocomplete="off"></label>
+              <label class="field"><span>Sample number</span><input type="text" name="sample-number" inputmode="decimal" data-sample-value autocomplete="off" placeholder="For example, 1234.5…"></label>
+              <label class="field"><span>Locale</span><select name="formatter-locale" data-formatter-locale autocomplete="off"><option value="en">English · en</option><option value="fr">French · fr</option><option value="de">German · de</option><option value="hy">Armenian · hy</option></select></label>
+              <label class="field"><span>Precision</span><input type="number" name="precision" min="0" max="12" inputmode="numeric" data-precision autocomplete="off" placeholder="For example, 3…"><small class="field-hint">Blank uses the locale default.</small></label>
+              <label class="field"><span>Decimal symbol</span><input type="text" name="decimal-symbol" maxlength="2" data-decimal autocomplete="off" placeholder="For example, .…"><small class="field-hint">Blank uses the locale symbol.</small></label>
+              <label class="field"><span>Grouping symbol</span><input type="text" name="grouping-symbol" maxlength="2" data-group autocomplete="off" placeholder="For example, ,…"><small class="field-hint">Blank uses the locale symbol.</small></label>
+              <label class="field"><span>Integer group size</span><input type="number" name="group-size" min="1" max="6" inputmode="numeric" data-group-digits value="3" autocomplete="off"></label>
+              <label class="field"><span>Significant digits</span><input type="number" name="significant-digits" min="1" max="16" inputmode="numeric" data-significant autocomplete="off" placeholder="For example, 6…"><small class="field-hint">Blank disables this override.</small></label>
+              <label class="field"><span>Notation</span><select name="notation" data-notation autocomplete="off"><option value="basic">Basic</option><option value="e">E notation</option><option value="scientific">Scientific</option><option value="engineering">Engineering</option></select></label>
+              <label class="field"><span>Formatter API</span><select name="formatter-api" data-formatter-api autocomplete="off"><option value="number">NumberFormatter</option><option value="standard">Formatter::Standard</option></select></label>
+            </div>
+          </div>
+      </section>
+
+      <section class="code-panel formatter-code-panel" aria-labelledby="formatter-ruby-title" data-arrange-item="ruby-call" data-arrange-label="Ruby configuration panel">
+          <div class="code-panel__header"><span id="formatter-ruby-title">Equivalent Ruby configuration</span><button class="copy-button" type="button" data-copy-target="#formatter-ruby-code" data-copy-message="Formatter configuration copied">Copy</button></div>
+          <pre id="formatter-ruby-code"><code data-formatter-code></code></pre>
+      </section>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

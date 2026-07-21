@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Plurimath project articles and release explanations.">
+  <title>Blog — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="blog">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Blog</span></nav>
+      <p class="eyebrow">Updates / 10 published articles</p>
+      <h1>Project notes</h1>
+      <p class="lede">Release explanations, representation research, and practical guides from the Plurimath project.</p>
+    </header>
+
+    <article class="panel blog-lead">
+      <div>
+        <p class="eyebrow">Featured / July 2024</p>
+        <h2>Number formatting support in Plurimath</h2>
+        <p>Plurimath now offers precise control over how numbers are presented, enhancing both readability and precision.</p>
+        <a class="button-secondary" href="article.html">View article layout <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="blog-lead__visual">
+        <math display="block" aria-label="one point two three four five six seven eight nine times ten to the eighth power"><mrow><mn>1.23456789</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup></mrow></math>
+      </div>
+    </article>
+
+    <section aria-labelledby="all-posts-title">
+      <div class="section-heading" style="margin-top: var(--space-16); margin-bottom: var(--space-6)"><div><p class="eyebrow">Archive</p><h2 id="all-posts-title">All articles</h2></div><p>Cards use the ten posts currently stored in <code>_posts/</code>. One separate article page demonstrates the reading experience.</p></div>
+      <div class="post-grid">
+        <a class="post-card" href="article.html"><time datetime="2024-07-10">10 Jul 2024</time><div><h3>Number formatting support in Plurimath</h3><p>Control locale, decimal symbols, grouping, significant digits, and notation.</p></div><small>Open article layout →</small></a>
+        <article class="post-card"><time datetime="2024-09-17">17 Sep 2024</time><div><h3>Number formatting now supported in formulas across all math representation languages</h3><p>Apply one formatter to formulas serialized across supported representations.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2024-09-19">19 Sep 2024</time><div><h3>Plurimath now supports MathML intent</h3><p>Attach semantic intent to generated MathML output.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2024-08-26">26 Aug 2024</time><div><h3>Enhanced Symbol Compatibility in Plurimath</h3><p>Compatibility wrappers help mathematical symbols travel between formats.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2024-04-09">09 Apr 2024</time><div><h3>UnitsML support</h3><p>Represent units consistently inside mathematical expressions.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2024-04-05">05 Apr 2024</time><div><h3>UnicodeMath support</h3><p>Use a linear mathematical notation designed for Unicode-aware workflows.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2023-08-22">22 Aug 2023</time><div><h3>Using Plurimath</h3><p>Parse and serialize expressions from Ruby and JavaScript.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2023-08-20">20 Aug 2023</time><div><h3>Math font licensing and availability</h3><p>Survey the practical constraints around mathematical fonts.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2023-08-15">15 Aug 2023</time><div><h3>LaTeX symbol font coverage</h3><p>Compare dedicated math fonts against the LaTeX symbol inventory.</p></div><small>Published article</small></article>
+        <article class="post-card"><time datetime="2023-08-12">12 Aug 2023</time><div><h3>Introducing Plurimath</h3><p>Why one formula model matters across representation languages.</p></div><small>Published article</small></article>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

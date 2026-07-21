@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Search Plurimath symbols by glyph, name, or representation alias.">
+  <title>Symbols — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/catalogs.js"></script>
+</head>
+<body data-page="symbols">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Symbols</span></nav>
+      <p class="eyebrow">Reference / 1,434 usable records</p>
+      <h1>Symbols</h1>
+      <p class="lede">Search by glyph, meaning, or syntax alias. Copy the representation your document expects.</p>
+    </header>
+
+    <div class="catalog-shell" data-symbol-catalog>
+      <aside class="catalog-sidebar" aria-label="Symbol catalog information">
+        <section class="catalog-sidebar__group">
+          <h2>Search fields</h2>
+          <div class="filter-list" aria-label="Indexed fields">
+            <span class="filter-button"><span>Presentation glyph</span><small>∀</small></span>
+            <span class="filter-button"><span>AsciiMath alias</span><small>forall</small></span>
+            <span class="filter-button"><span>LaTeX alias</span><small>\forall</small></span>
+            <span class="filter-button"><span>UnicodeMath alias</span><small>∀</small></span>
+          </div>
+        </section>
+        <section class="catalog-sidebar__group">
+          <h2>Prototype scope</h2>
+          <p>Twelve records demonstrate the lookup model. Production would generate the full catalog from <code>_data/symbols_list.yml</code>.</p>
+        </section>
+      </aside>
+
+      <section class="catalog-main" aria-labelledby="symbol-results-title">
+        <h2 class="sr-only" id="symbol-results-title">Symbol results</h2>
+        <div class="catalog-toolbar">
+          <label class="search-field">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+            <span class="sr-only">Search symbols</span>
+            <input type="search" name="symbol-search" placeholder="Paste a glyph or type an alias…" data-symbol-search autocomplete="off">
+          </label>
+          <p class="catalog-count" data-symbol-count aria-live="polite">Showing 12 prototype records</p>
+        </div>
+        <div class="catalog-grid symbol-grid" data-symbol-results></div>
+      </section>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

@@ -158,4 +158,5 @@ exclude:
   - Makefile
   - Rakefile
   - README.adoc
+  - design-prototypes
   - vendor # for deployment

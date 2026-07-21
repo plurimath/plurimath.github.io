@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Convert mathematical expressions with Plurimath's local browser engine.">
+  <title>Conversion workbench — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/converter.js"></script>
+</head>
+<body data-page="converter">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Converter</span></nav>
+      <p class="eyebrow">Tool / Live browser conversion</p>
+      <h1>Conversion workbench</h1>
+      <p class="lede">Set the source and target first. Only arguments relevant to the chosen output remain in view.</p>
+    </header>
+
+    <details class="notice tool-boundary" role="note">
+      <summary><span class="status-badge status-badge--live">Live</span><strong>Live conversion with Ruby-only options.</strong></summary>
+      <p>Core conversion and MathML intent run in the browser. Locale, formatter, UnitsML, and layout controls generate an accurate Ruby call and are labeled as Ruby-only.</p>
+    </details>
+
+    <div data-converter>
+      <div class="notice notice--warning converter-error" id="converter-error" role="alert" hidden><span aria-hidden="true">!</span><p data-converter-error></p></div>
+
+      <div class="workbench converter-workbench" data-arrange-surface="converter-workbench" aria-label="Conversion workbench layout">
+      <section class="panel converter-source" aria-labelledby="source-panel-title" data-arrange-item="source" data-arrange-label="Source panel">
+          <div class="panel-header">
+            <h2 id="source-panel-title">Source and target</h2>
+            <button class="button-quiet" type="button" data-converter-reset>Reset</button>
+          </div>
+          <div class="panel-body">
+            <div class="format-route">
+              <label class="field">
+                <span>Source format</span>
+                <select name="source-format" data-input-format autocomplete="off">
+                  <option value="asciimath">AsciiMath</option>
+                  <option value="latex">LaTeX</option>
+                  <option value="mathml">MathML</option>
+                  <option value="html">HTML</option>
+                  <option value="unicode">UnicodeMath</option>
+                  <option value="omml">OMML</option>
+                </select>
+              </label>
+              <button class="route-swap" type="button" data-swap-formats aria-label="Swap source and target formats">⇄</button>
+              <label class="field">
+                <span>Target format</span>
+                <select name="target-format" data-output-format autocomplete="off">
+                  <option value="mathml">MathML</option>
+                  <option value="latex">LaTeX</option>
+                  <option value="asciimath">AsciiMath</option>
+                  <option value="unicodemath">UnicodeMath</option>
+                  <option value="html">HTML</option>
+                  <option value="omml">OMML</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field" style="margin-top: var(--space-5)">
+              <span>Formula source</span>
+              <textarea name="formula-source" data-converter-source spellcheck="false" autocomplete="off" aria-describedby="converter-error">sum_(i=1)^n i^3=((n(n+1))/2)^2</textarea>
+            </label>
+
+            <div class="sample-row" aria-label="Formula samples">
+              <button class="sample-button" type="button" data-converter-sample="sum">Sum of cubes</button>
+              <button class="sample-button" type="button" data-converter-sample="quadratic">Quadratic</button>
+              <button class="sample-button" type="button" data-converter-sample="fraction">LaTeX fraction</button>
+              <button class="sample-button" type="button" data-converter-sample="abs">Absolute value</button>
+            </div>
+          </div>
+      </section>
+
+      <section class="panel converter-output" aria-labelledby="output-panel-title" data-arrange-item="output" data-arrange-label="Output panel">
+          <div class="panel-header">
+            <h2 id="output-panel-title">Converted output</h2>
+            <div class="runtime-status" data-runtime-status role="status" aria-live="polite"><strong>Loading engine…</strong><span>Local bundle</span></div>
+          </div>
+          <textarea class="output-area" name="converted-output" data-converter-output aria-label="Converted output" readonly spellcheck="false" autocomplete="off"></textarea>
+          <div class="panel-header">
+            <p data-output-meta role="status" aria-live="polite">Waiting for engine…</p>
+            <button class="copy-button" type="button" data-copy-target="[data-converter-output]" data-copy-message="Converted output copied">Copy output</button>
+          </div>
+      </section>
+
+      <section class="panel converter-preview" aria-labelledby="preview-title" data-arrange-item="preview" data-arrange-label="MathML preview panel">
+        <div class="panel-header"><h2 id="preview-title">Native MathML preview</h2><span class="status-badge">Accessible source retained</span></div>
+        <div class="preview-surface math-display" data-converter-preview></div>
+      </section>
+
+      <section class="panel converter-arguments" aria-labelledby="arguments-title" data-arrange-item="arguments" data-arrange-label="Arguments panel">
+        <div class="panel-header"><h2 id="arguments-title">Arguments</h2><span class="status-badge">Target-aware</span></div>
+        <div class="panel-body options-stack">
+          <div class="form-grid">
+            <label class="field" data-ruby-only>
+              <span>Parse locale · Ruby only</span>
+              <select name="parse-locale" data-locale autocomplete="off">
+                <option value="en">English · en</option>
+                <option value="fr">French · fr</option>
+                <option value="de">German · de</option>
+                <option value="ar">Arabic · ar</option>
+              </select>
+            </label>
+            <label class="field" data-ruby-only>
+              <span>Formatter profile · Ruby only</span>
+              <select name="formatter-profile" data-formatter-profile autocomplete="off"><option value="none">None</option></select>
+            </label>
+          </div>
+          <fieldset class="option-group">
+            <legend>Shared serializer options</legend>
+            <label class="check-row"><input type="checkbox" name="include-unitsml" data-unitsml autocomplete="off"><span><strong>Include UnitsML XML</strong><br><small class="muted"><code>unitsml: { xml: true }</code> · Ruby only</small></span></label>
+          </fieldset>
+          <fieldset class="option-group" data-output-options>
+            <legend data-output-options-title>MathML options</legend>
+            <label class="check-row" data-option-for="mathml"><input type="checkbox" name="semantic-intent" data-intent autocomplete="off"><span><strong>Semantic intent</strong><br><small class="muted"><code>intent: true</code> · live</small></span></label>
+            <label class="check-row" data-option-for="mathml,omml"><input type="checkbox" name="display-style" data-display-style checked autocomplete="off"><span><strong>Display style</strong><br><small class="muted"><code>display_style: true</code> · Ruby only</small></span></label>
+            <label class="check-row" data-option-for="mathml,omml"><input type="checkbox" name="split-lines" data-split-lines autocomplete="off"><span><strong>Split line breaks</strong><br><small class="muted"><code>split_on_linebreak: true</code> · Ruby only</small></span></label>
+            <label class="check-row" data-option-for="mathml"><input type="checkbox" name="unary-spacing" data-unary-spacing checked autocomplete="off"><span><strong>Unary function spacing</strong><br><small class="muted"><code>unary_function_spacing: true</code> · Ruby only</small></span></label>
+          </fieldset>
+        </div>
+      </section>
+
+      <section class="code-panel converter-code" aria-labelledby="ruby-call-title" data-arrange-item="ruby-call" data-arrange-label="Ruby call panel">
+        <div class="code-panel__header"><span id="ruby-call-title">Equivalent Ruby call</span><button class="copy-button" type="button" data-copy-target="#converter-ruby-code" data-copy-message="Ruby call copied">Copy</button></div>
+        <pre id="converter-ruby-code"><code data-ruby-code></code></pre>
+      </section>
+      </div>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

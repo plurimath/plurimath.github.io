@@ -1,0 +1,84 @@
+:root {
+  color-scheme: dark;
+  --canvas: #090d18;
+  --canvas-soft: #0d1422;
+  --surface: #111827;
+  --surface-raised: #18243a;
+  --surface-hover: #1d2b44;
+  --ink: #f3f6fb;
+  --ink-soft: #d5dce8;
+  --muted: #a9b5c8;
+  --muted-strong: #c4cddd;
+  --rule: #2a3852;
+  --rule-strong: #3c4d6d;
+  --action: #4c8dff;
+  --action-strong: #76a8ff;
+  --on-action: #09111e;
+  --model: #32d2b2;
+  --conversion: #ff806c;
+  --warning: #f2c66d;
+  --danger: #ff7184;
+  --shadow: 0 24px 70px rgb(0 0 0 / 28%);
+  --focus: #9fc0ff;
+
+  --format-asciimath: #4c8dff;
+  --format-latex: #9c7cff;
+  --format-mathml: #32d2b2;
+  --format-unicodemath: #f2c66d;
+  --format-html: #72d089;
+  --format-omml: #ff806c;
+
+  --font-display: "Bitstream Charter", Charter, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Source Sans 3", "Avenir Next", Avenir, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Ubuntu Mono", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  --duration-fast: 140ms;
+  --duration-base: 180ms;
+  --duration-slow: 360ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.15rem;
+  --radius-pill: 999px;
+  --content: 76rem;
+  --reading: 68ch;
+  --header-height: 4rem;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --canvas: #f4f7fb;
+  --canvas-soft: #edf2f8;
+  --surface: #ffffff;
+  --surface-raised: #eaf0f8;
+  --surface-hover: #e1e9f4;
+  --ink: #152033;
+  --ink-soft: #2d3b50;
+  --muted: #59677b;
+  --muted-strong: #3d4c61;
+  --rule: #cad5e4;
+  --rule-strong: #aebdd1;
+  --action: #185dcc;
+  --action-strong: #0f4cae;
+  --on-action: #ffffff;
+  --model: #087f6c;
+  --conversion: #c74a38;
+  --warning: #8a6300;
+  --danger: #b92f48;
+  --shadow: 0 24px 70px rgb(31 50 80 / 16%);
+  --focus: #0f55c5;
+}

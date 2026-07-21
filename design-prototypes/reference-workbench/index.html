@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Plurimath, converter between math representational languages.">
+  <title>Plurimath — Convert between multiple math representation languages</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("plurimath.reference-workbench.theme");
+        document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      } catch (error) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+
+  <main class="page-main" id="main-content">
+    <section class="home-hero page-container" aria-labelledby="home-title">
+      <div class="home-hero__copy">
+        <p class="eyebrow">Plurimath Open Project</p>
+        <h1 id="home-title">Convert between <em>multiple math representation languages.</em></h1>
+        <p class="lede">Convert between MathML, OMML, LaTeX math, AsciiMath, and UnicodeMath using Plurimath.</p>
+        <div class="button-row">
+          <a class="button" href="converter.html">Try the converter <span aria-hidden="true">→</span></a>
+          <a class="button-secondary" href="functions.html">Browse functions</a>
+        </div>
+      </div>
+
+      <div class="representation-stage" aria-label="The same formula in multiple representations">
+        <div class="representation-stage__meta">
+          <p>FORMULA / SUM OF CUBES</p>
+          <span class="status-badge status-badge--live">6 representations</span>
+        </div>
+        <div class="math-display">
+          <math display="block" aria-label="the sum from i equals one to n of i cubed equals the square of n times n plus one over two">
+            <mrow>
+              <munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover>
+              <msup><mi>i</mi><mn>3</mn></msup>
+              <mo>=</mo>
+              <msup>
+                <mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mn>2</mn></mfrac><mo>)</mo></mrow>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+          </math>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Formula representation" data-tab-group="hero-representations">
+          <button class="tab-button" type="button" role="tab" aria-selected="true" data-tab="asciimath" data-format="asciimath">AsciiMath</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="latex" data-format="latex">LaTeX</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="mathml" data-format="mathml">MathML</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="unicodemath" data-format="unicodemath">UnicodeMath</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="html" data-format="html">HTML</button>
+          <button class="tab-button" type="button" role="tab" aria-selected="false" tabindex="-1" data-tab="omml" data-format="omml">OMML</button>
+        </div>
+        <p class="tab-scroll-hint">Swipe for more formats →</p>
+        <pre class="representation-stage__source" data-tab-panel-group="hero-representations" data-tab-panel="asciimath">sum_(i=1)^n i^3=((n(n+1))/2)^2</pre>
+        <pre class="representation-stage__source" data-tab-panel-group="hero-representations" data-tab-panel="latex" hidden>\sum_{i=1}^{n} i^3 = \left(\frac{n(n+1)}{2}\right)^2</pre>
+        <pre class="representation-stage__source" data-tab-panel-group="hero-representations" data-tab-panel="mathml" hidden>&lt;munderover&gt;&lt;mo&gt;∑&lt;/mo&gt;…&lt;/munderover&gt;
+&lt;msup&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;</pre>
+        <pre class="representation-stage__source" data-tab-panel-group="hero-representations" data-tab-panel="unicodemath" hidden>∑_(i=1)^n i^3=((n(n+1))/2)^2</pre>
+        <pre class="representation-stage__source" data-tab-panel-group="hero-representations" data-tab-panel="html" hidden>&lt;math display="block"&gt;&lt;munderover&gt;…&lt;/munderover&gt;&lt;/math&gt;</pre>
+        <pre class="representation-stage__source" data-tab-panel-group="hero-representations" data-tab-panel="omml" hidden>&lt;m:nary&gt;&lt;m:naryPr&gt;…&lt;/m:naryPr&gt;&lt;m:e&gt;…&lt;/m:e&gt;&lt;/m:nary&gt;</pre>
+      </div>
+    </section>
+
+    <section class="pipeline-section">
+      <div class="page-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">The conversion model</p>
+            <h2>Representations change. The formula does not.</h2>
+          </div>
+          <p>Plurimath parses source syntax into one formula tree, then serializes that tree into the representation required by a document, browser, or publishing workflow.</p>
+        </div>
+        <div class="pipeline" aria-label="Parse, formula model, serialize">
+          <article class="pipeline__step">
+            <p class="eyebrow">Input</p>
+            <h3>Parse source syntax</h3>
+            <p>AsciiMath, LaTeX, MathML, HTML, UnicodeMath, or OMML.</p>
+          </article>
+          <div class="pipeline__arrow" aria-hidden="true">→</div>
+          <article class="pipeline__step pipeline__step--model">
+            <p class="eyebrow">Stable center</p>
+            <h3>Formula model</h3>
+            <p>Inspect, format, and preserve mathematical meaning.</p>
+          </article>
+          <div class="pipeline__arrow" aria-hidden="true">→</div>
+          <article class="pipeline__step">
+            <p class="eyebrow">Output</p>
+            <h3>Serialize for use</h3>
+            <p>Choose a target representation and its supported arguments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="entry-section">
+      <div class="page-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Choose your task</p>
+            <h2>Three ways into Plurimath</h2>
+          </div>
+          <p>Each section has one job. Tools stay focused; records stay searchable; guides stay readable.</p>
+        </div>
+        <div class="entry-list">
+          <a class="entry-link" href="converter.html">
+            <span class="entry-link__index">01 / WORKBENCH</span>
+            <div><h3>Convert a formula</h3><p>Choose formats, adjust serializer options, and inspect the live result.</p></div>
+            <span class="entry-link__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entry-link" href="functions.html">
+            <span class="entry-link__index">02 / REFERENCE</span>
+            <div><h3>Look up syntax</h3><p>Find a function or symbol and compare its documented representations.</p></div>
+            <span class="entry-link__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="entry-link" href="formatter.html">
+            <span class="entry-link__index">03 / CONFIGURE</span>
+            <div><h3>Format numbers consistently</h3><p>Create reusable locale and publication profiles that persist in this browser.</p></div>
+            <span class="entry-link__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="format-section">
+      <div class="page-container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Representation seam</p>
+            <h2>Format identity that stays put</h2>
+          </div>
+          <p>The same format label and color follow a visitor from overview, to reference record, to tool output.</p>
+        </div>
+        <div class="format-strip" aria-label="Supported browser representations">
+          <div class="format-strip__item" style="--format-color: var(--format-asciimath)"><strong>AsciiMath</strong><code>sqrt(x)</code></div>
+          <div class="format-strip__item" style="--format-color: var(--format-latex)"><strong>LaTeX</strong><code>\sqrt{x}</code></div>
+          <div class="format-strip__item" style="--format-color: var(--format-mathml)"><strong>MathML</strong><code>&lt;msqrt&gt;</code></div>
+          <div class="format-strip__item" style="--format-color: var(--format-unicodemath)"><strong>UnicodeMath</strong><code>√x</code></div>
+          <div class="format-strip__item" style="--format-color: var(--format-html)"><strong>HTML</strong><code>&lt;math&gt;</code></div>
+          <div class="format-strip__item" style="--format-color: var(--format-omml)"><strong>OMML</strong><code>&lt;m:rad&gt;</code></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d18">
+  <meta name="description" content="Prototype a Plurimath formula evaluation workflow and Ruby call.">
+  <title>Formula evaluator concept — Plurimath</title>
+  <script>
+    (() => { try { const saved = localStorage.getItem("plurimath.reference-workbench.theme"); document.documentElement.dataset.theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (error) { document.documentElement.dataset.theme = "dark"; } })();
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/site.js"></script>
+  <script type="module" src="assets/js/evaluator.js"></script>
+</head>
+<body data-page="evaluator">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div data-include="topbar"></div>
+  <main class="page-main page-container" id="main-content">
+    <header class="page-header page-header--compact">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>Tools</span><span>Evaluator</span></nav>
+      <p class="eyebrow">Tool / Ruby API concept</p>
+      <h1>Formula evaluator</h1>
+      <p class="lede">Bind numeric values to variables, inspect the expected result flow, and copy the Ruby evaluation call.</p>
+    </header>
+
+    <details class="notice notice--warning tool-boundary" role="note">
+      <summary><span class="status-badge status-badge--concept">Concept</span><strong>Proposed interaction; Ruby executes.</strong></summary>
+      <p>The browser recognizes only the displayed samples and does not claim API parity. Ruby execution remains authoritative.</p>
+    </details>
+
+    <div class="workbench" data-evaluator data-arrange-surface="evaluator-workbench" aria-label="Evaluation workbench layout">
+      <section class="panel evaluator-expression" aria-labelledby="expression-title" data-arrange-item="expression" data-arrange-label="Expression panel">
+          <div class="panel-header"><h2 id="expression-title">Expression</h2><span class="format-badge" style="color: var(--format-asciimath)">AsciiMath</span></div>
+          <div class="panel-body">
+            <label class="field"><span>Formula source</span><textarea name="evaluation-expression" data-expression spellcheck="false" autocomplete="off">sqrt(a^2 + b^2)</textarea></label>
+            <div class="sample-row" aria-label="Evaluator samples">
+              <button class="sample-button" type="button" data-evaluator-sample="pythagorean">Pythagorean</button>
+              <button class="sample-button" type="button" data-evaluator-sample="trig">Sine</button>
+              <button class="sample-button" type="button" data-evaluator-sample="sum">Bounded sum</button>
+            </div>
+          </div>
+      </section>
+
+      <section class="panel evaluator-bindings" aria-labelledby="bindings-title" data-arrange-item="bindings" data-arrange-label="Variable bindings panel">
+          <div class="panel-header"><h2 id="bindings-title">Variable bindings</h2><button class="button-quiet" type="button" data-add-binding>+ Add binding</button></div>
+          <div class="panel-body">
+            <div class="options-stack" data-binding-list></div>
+            <p class="field-hint">The proposed UI accepts explicit names and real numeric values. It does not claim automatic variable discovery.</p>
+          </div>
+      </section>
+
+      <section class="panel evaluator-result" aria-labelledby="evaluation-result-title" data-arrange-item="result" data-arrange-label="Result panel">
+          <div class="panel-header"><h2 id="evaluation-result-title">Result</h2><span class="status-badge">Sample approximation</span></div>
+          <div class="formatter-preview">
+            <output data-evaluation-output role="status" aria-live="polite">5</output>
+            <small data-evaluation-status role="status" aria-live="polite">Recognized sample; generated Ruby is authoritative.</small>
+          </div>
+          <div class="preview-surface math-display" data-evaluation-preview>
+            <math display="block" aria-label="square root of a squared plus b squared"><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></math>
+          </div>
+      </section>
+
+      <section class="code-panel evaluator-code" aria-labelledby="evaluation-ruby-title" data-arrange-item="ruby-call" data-arrange-label="Ruby call panel">
+        <div class="code-panel__header"><span id="evaluation-ruby-title">Equivalent Ruby call</span><button class="copy-button" type="button" data-copy-target="#evaluation-ruby-code" data-copy-message="Evaluation call copied">Copy</button></div>
+        <pre id="evaluation-ruby-code"><code data-evaluation-code></code></pre>
+      </section>
+    </div>
+  </main>
+  <div data-include="footer"></div>
+  <div data-include="search-dialog"></div>
+</body>
+</html>
