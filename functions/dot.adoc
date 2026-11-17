@@ -15,13 +15,11 @@ function-type: unary
 dot(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \dot{x}
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a link:../overset[Overset class].

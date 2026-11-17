@@ -15,14 +15,12 @@ function-type: unary
 tilde(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \tilde{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ tilde(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,4 +65,3 @@ tilde(x)
   </m:oMath>
 </m:oMathPara>
 ----
-

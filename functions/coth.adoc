@@ -15,14 +15,12 @@ function-type: unary
 coth(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \coth{( x )}
 ----
-
 
 === MathML
 
@@ -31,17 +29,19 @@ coth(x)
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true">
     <mrow>
-      <mi>coth</mi>
+      <mo rspace="thickmathspace"/>
       <mrow>
-        <mo>(</mo>
-        <mi>x</mi>
-        <mo>)</mo>
+        <mi>coth</mi>
+        <mrow>
+          <mo>(</mo>
+          <mi>x</mi>
+          <mo>)</mo>
+        </mrow>
       </mrow>
     </mrow>
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -70,13 +70,8 @@ coth(x)
         <m:d>
           <m:dPr>
             <m:begChr m:val="("/>
+            <m:sepChr m:val=""/>
             <m:endChr m:val=")"/>
-            <m:ctrlPr>
-              <w:rPr>
-                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-                <w:i/>
-              </w:rPr>
-            </m:ctrlPr>
           </m:dPr>
           <m:e>
             <m:r>
@@ -90,11 +85,9 @@ coth(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-coth(x)
+coth⁡(x)
 ----
-

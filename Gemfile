@@ -45,3 +45,6 @@ gem "webrick", "~> 1.7"
 gem "jekyll-theme-open-project", "~> 2.1.5"
 
 gem "plurimath"
+
+# Generates functions/*.adoc (see _tasks/functions.rake)
+gem "rake"

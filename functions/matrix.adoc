@@ -15,13 +15,11 @@ function-type: unary
 \begin{matrix}x \\ y \\ z\end{matrix}
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-■(x&y)
+■(x@y@z)
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

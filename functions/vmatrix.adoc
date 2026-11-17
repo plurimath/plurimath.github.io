@@ -15,15 +15,12 @@ function-type: unary
 \begin{vmatrix}x \\ y \\ z\end{vmatrix}
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-⒱(x&y&z)
+⒱(x@y@z)
 ----
-
-
 
 [[Vmatrix]]
 == Vmatrix
@@ -35,13 +32,11 @@ function-type: unary
 \begin{Vmatrix}x \\ y \\ z\end{Vmatrix}
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-⒩(x&y&z)
+⒩(x@y@z)
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

@@ -23,7 +23,6 @@ function-type: ternary
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -71,13 +70,11 @@ function-type: ternary
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-x┬(z)┴(y)
+x┬(y)┴(z)
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../powerbase[PowerBase class]

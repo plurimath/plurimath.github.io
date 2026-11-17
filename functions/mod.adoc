@@ -1,11 +1,11 @@
 ---
-title: "`log` (binary)"
+title: "`mod` (binary)"
 layout: function
-function-name: log
+function-name: mod
 function-type: binary
 ---
 
-[[log]]
+[[mod]]
 == Mod
 
 === AsciiMath
@@ -15,14 +15,12 @@ function-type: binary
 x mod y
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 {x} \mod {y}
 ----
-
 
 === MathML
 
@@ -39,13 +37,11 @@ x mod y
 </math>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-mod(x)
+xmody
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the *presentation* of this example in *OMML*  will be `"x" rm( mod ) "y"`.

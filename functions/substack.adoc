@@ -15,6 +15,4 @@ function-type: unary
 \substack{x & x \\ y & z}
 ----
 
-
 NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
-

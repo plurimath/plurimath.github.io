@@ -15,14 +15,12 @@ function-type: unary
 bar(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \overline{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ bar(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -64,4 +61,3 @@ bar(x)
   </m:oMath>
 </m:oMathPara>
 ----
-

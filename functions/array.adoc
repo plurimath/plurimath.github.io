@@ -15,5 +15,4 @@ function-type: unary
 \begin{array}.x \\ y \\ z\end{array}
 ----
 
-
 NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

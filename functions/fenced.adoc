@@ -15,14 +15,12 @@ function-type: ternary
 (x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 ( x )
 ----
-
 
 === MathML
 
@@ -39,7 +37,6 @@ function-type: ternary
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -49,13 +46,8 @@ function-type: ternary
     <m:d>
       <m:dPr>
         <m:begChr m:val="("/>
+        <m:sepChr m:val=""/>
         <m:endChr m:val=")"/>
-        <m:ctrlPr>
-          <w:rPr>
-            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-            <w:i/>
-          </w:rPr>
-        </m:ctrlPr>
       </m:dPr>
       <m:e>
         <m:r>
@@ -66,7 +58,6 @@ function-type: ternary
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

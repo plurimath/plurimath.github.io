@@ -21,7 +21,6 @@ function-type: unary
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -29,23 +28,14 @@ function-type: unary
 <m:oMathPara>
   <m:oMath>
     <m:borderBox>
-      <m:borderBoxPr>
-        <m:ctrlPr>
-          <w:rPr>
-            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-            <w:i/>
-          </w:rPr>
-        </m:ctrlPr>
-      </m:borderBoxPr>
       <m:e>
         <m:r>
-          <m:t>n</m:t>
+          <m:t>x</m:t>
         </m:r>
       </m:e>
     </m:borderBox>
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the output of this example in *AsciiMath* will be represented as `(x)`.

@@ -21,7 +21,6 @@ function-type: unary
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -38,13 +37,11 @@ function-type: unary
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-\mbfitx
+\mbfit"a"
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.

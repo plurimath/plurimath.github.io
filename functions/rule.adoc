@@ -15,5 +15,4 @@ function-type: ternary
 \rule[5pt]{5pt}{5pt}
 ----
 
-
 NOTE: In other conversion, this class will not return any presentational output.

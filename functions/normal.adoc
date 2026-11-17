@@ -1,4 +1,3 @@
-
 ---
 title: "`normal` (unary)"
 layout: function
@@ -16,14 +15,12 @@ function-type: unary
 rm(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathrm{x}
 ----
-
 
 === MathML
 
@@ -37,7 +34,6 @@ rm(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -54,7 +50,6 @@ rm(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

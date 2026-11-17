@@ -15,14 +15,12 @@ function-type: unary
 cancel(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \cancel{x}
 ----
-
 
 === MathML
 
@@ -36,6 +34,5 @@ cancel(x)
   </mstyle>
 </math>
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a straightforward equation. For example, the output of this example in *AsciiMath* will be represented as `x`.

@@ -15,13 +15,11 @@ function-type: binary
 stackrel(x)(y)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \stackrel{x}{y}
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../overset[Overset class]

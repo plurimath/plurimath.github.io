@@ -15,14 +15,12 @@ function-type: binary
 log_(x)^(y)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \log_{x}^{y}
 ----
-
 
 === MathML
 
@@ -38,7 +36,6 @@ log_(x)^(y)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -78,10 +75,9 @@ log_(x)^(y)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-log(x)
+log_(x)^(y)
 ----

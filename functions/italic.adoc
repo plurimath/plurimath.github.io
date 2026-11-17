@@ -15,7 +15,6 @@ function-type: unary
 ii(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
@@ -23,20 +22,18 @@ ii(x)
 \mathit{x}
 ----
 
-
 === MathML
 
 [source,xml]
 ----
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true">
-    <mstyle mathvariant="mathit">
+    <mstyle mathvariant="italic">
       <mi>x</mi>
     </mstyle>
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -53,7 +50,6 @@ ii(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

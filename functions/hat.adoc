@@ -15,14 +15,12 @@ function-type: unary
 hat(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \hat{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ hat(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 

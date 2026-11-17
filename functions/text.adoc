@@ -15,14 +15,12 @@ function-type: unary
 "x"
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \text{x}
 ----
-
 
 === MathML
 
@@ -35,7 +33,6 @@ function-type: unary
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -43,12 +40,14 @@ function-type: unary
 <m:oMathPara>
   <m:oMath>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p"/>
+      </m:rPr>
       <m:t>x</m:t>
     </m:r>
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

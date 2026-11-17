@@ -15,14 +15,12 @@ function-type: unary
 abs(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \abs{x}
 ----
-
 
 === MathML
 
@@ -38,7 +36,6 @@ abs(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -65,7 +62,6 @@ abs(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

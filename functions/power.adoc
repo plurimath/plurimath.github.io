@@ -15,14 +15,12 @@ function-type: binary
 x^(y)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 x^{y}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ x^{y}
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,7 +65,6 @@ x^{y}
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

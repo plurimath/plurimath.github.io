@@ -15,14 +15,12 @@ function-type: binary
 underset(x)(y)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \underset{x}{y}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ underset(x)(y)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -56,12 +53,12 @@ underset(x)(y)
       </m:limLowPr>
       <m:e>
         <m:r>
-          <m:t>x</m:t>
+          <m:t>y</m:t>
         </m:r>
       </m:e>
       <m:lim>
         <m:r>
-          <m:t>y</m:t>
+          <m:t>x</m:t>
         </m:r>
       </m:lim>
     </m:limLow>
@@ -69,10 +66,9 @@ underset(x)(y)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-(x)┬y
+(y)┬x
 ----

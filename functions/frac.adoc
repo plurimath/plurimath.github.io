@@ -15,14 +15,12 @@ function-type: binary
 frac(x)(y)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \frac{x}{y}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ frac(x)(y)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,7 +65,6 @@ frac(x)(y)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

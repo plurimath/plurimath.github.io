@@ -21,6 +21,4 @@ function-type: unary
 </math>
 ----
 
-
 NOTE: In other conversions, the value of the class will not be processed at all.
-

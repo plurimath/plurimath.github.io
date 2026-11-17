@@ -15,14 +15,12 @@ function-type: unary
 vec(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \vec{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ vec(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,4 +65,3 @@ vec(x)
   </m:oMath>
 </m:oMathPara>
 ----
-

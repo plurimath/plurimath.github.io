@@ -15,14 +15,12 @@ function-type: unary
 ddot(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \ddot{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ ddot(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,4 +65,3 @@ ddot(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
