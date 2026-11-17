@@ -7,8 +7,10 @@
 # source with the plurimath gem and converting it, so the pages always show
 # what the gem actually does.
 #
-#   bundle exec rake functions:generate   # rewrite functions/*.adoc
-#   bundle exec rake functions:check      # exit 1 if any page is out of date
+#   BUNDLE_GEMFILE=_tasks/Gemfile bundle exec rake functions:generate
+#   BUNDLE_GEMFILE=_tasks/Gemfile bundle exec rake functions:check
+#
+# generate rewrites functions/*.adoc; check exits 1 if any page is out of date.
 #
 # OMML examples leave out the namespace declarations on m:oMathPara, which
 # are the same for every output.
@@ -115,7 +117,7 @@ namespace :functions do
   desc "Fail if functions/*.adoc differ from what functions:generate would write"
   task :check do
     changed, orphans = FunctionPages.stale_pages
-    changed.each { |path| warn "#{path} is out of date; run `bundle exec rake functions:generate`" }
+    changed.each { |path| warn "#{path} is out of date; run `BUNDLE_GEMFILE=_tasks/Gemfile bundle exec rake functions:generate`" }
     orphans.each { |path| warn "#{path} has no entry in #{FunctionPages::DATA_FILE}" }
     abort if changed.any? || orphans.any?
     puts "functions/*.adoc are up to date (plurimath #{Gem.loaded_specs['plurimath']&.version})"

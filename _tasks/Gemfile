@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+# Bundle for the rake tasks in this directory. It is separate from the site
+# Gemfile because current plurimath cannot resolve alongside Jekyll
+# (unicode-display_width via terminal-table).
+gem "plurimath"
+gem "rake"
