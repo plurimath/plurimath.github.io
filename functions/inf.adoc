@@ -5,6 +5,7 @@ function-name: inf
 function-type: binary
 ---
 
+[[inf]]
 == Inf
 
 === AsciiMath
@@ -14,21 +15,18 @@ function-type: binary
 inf_(x)^(y)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
-\inf_{x}^{y}
+\in f_{x}^{y}
 ----
-
 
 === UnicodeMath
 
 [source,unicodemath]
 ----
-inf(x)
+∈ f_(x)^(y)
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../underover[underover class]

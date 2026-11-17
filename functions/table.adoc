@@ -15,16 +15,12 @@ function-type: unary
 [[x], [y]]
 ----
 
-
-
 === LaTeX
 
 [source,latex]
 ----
 \left [\begin{matrix}x \\ y\end{matrix}\right ]
 ----
-
-
 
 === MathML
 
@@ -51,7 +47,6 @@ function-type: unary
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -93,10 +88,9 @@ function-type: unary
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-■(𝑥&𝑦&𝑧)
+ⓢ(x@y)
 ----

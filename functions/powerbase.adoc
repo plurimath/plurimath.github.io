@@ -15,14 +15,12 @@ function-type: ternary
 x_(y)^(z)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 x_{y}^{z}
 ----
-
 
 === MathML
 
@@ -38,7 +36,6 @@ x_{y}^{z}
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -74,7 +71,6 @@ x_{y}^{z}
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

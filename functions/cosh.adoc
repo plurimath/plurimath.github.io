@@ -15,14 +15,12 @@ function-type: unary
 cosh(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \cosh{( x )}
 ----
-
 
 === MathML
 
@@ -31,17 +29,19 @@ cosh(x)
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true">
     <mrow>
-      <mi>cosh</mi>
+      <mo rspace="thickmathspace"/>
       <mrow>
-        <mo>(</mo>
-        <mi>x</mi>
-        <mo>)</mo>
+        <mi>cosh</mi>
+        <mrow>
+          <mo>(</mo>
+          <mi>x</mi>
+          <mo>)</mo>
+        </mrow>
       </mrow>
     </mrow>
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -70,13 +70,8 @@ cosh(x)
         <m:d>
           <m:dPr>
             <m:begChr m:val="("/>
+            <m:sepChr m:val=""/>
             <m:endChr m:val=")"/>
-            <m:ctrlPr>
-              <w:rPr>
-                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-                <w:i/>
-              </w:rPr>
-            </m:ctrlPr>
           </m:dPr>
           <m:e>
             <m:r>
@@ -90,10 +85,9 @@ cosh(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-cos⁡h(x)
+cosh⁡(x)
 ----

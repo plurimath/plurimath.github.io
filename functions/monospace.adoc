@@ -15,14 +15,12 @@ function-type: unary
 mathtt(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathtt{x}
 ----
-
 
 === MathML
 
@@ -36,7 +34,6 @@ mathtt(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -53,7 +50,6 @@ mathtt(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

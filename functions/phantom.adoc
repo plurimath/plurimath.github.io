@@ -15,7 +15,6 @@ function-type: unary
 \phantom{x}
 ----
 
-
 === MathML
 
 [source,xml]
@@ -29,7 +28,6 @@ function-type: unary
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -37,9 +35,9 @@ function-type: unary
 <m:oMathPara>
   <m:oMath>
     <m:phant>
-      <m:phant>
-        <m:show val="m:off"/>
-      </m:phant>
+      <m:phantPr>
+        <m:show m:val="off"/>
+      </m:phantPr>
       <m:e>
         <m:r>
           <m:t>x</m:t>
@@ -50,13 +48,11 @@ function-type: unary
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
 ⟡(x)
 ----
-
 
 NOTE: In AsciiMath conversion, it will add `\ ` replacing all the letters as value of the object. For example, the output of this example in *AsciiMath* will be `\ `.

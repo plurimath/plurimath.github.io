@@ -15,14 +15,12 @@ function-type: unary
 mathbb(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathbb{x}
 ----
-
 
 === MathML
 
@@ -36,7 +34,6 @@ mathbb(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -53,7 +50,6 @@ mathbb(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

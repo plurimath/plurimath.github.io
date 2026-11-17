@@ -41,6 +41,4 @@ function-type: binary
 </m:oMathPara>
 ----
 
-
-NOTE: In other conversions, the generated output will resemble the content in
-the link:../powerbase[PowerBase class]
+NOTE: In other conversions, the generated output will resemble the content in the link:../powerbase[PowerBase class]

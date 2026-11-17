@@ -15,14 +15,12 @@ function-type: unary
 bb(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathbf{x}
 ----
-
 
 === MathML
 
@@ -36,7 +34,6 @@ bb(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -54,10 +51,9 @@ bb(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-\mbfd
+\mbfx
 ----

@@ -15,14 +15,12 @@ function-type: unary
 \begin{bmatrix}x \\ y \\ z\end{bmatrix}
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
 ⓢ(x@y@z)
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]
 
@@ -36,13 +34,11 @@ NOTE: In other conversions, the generated output will resemble the content in th
 \begin{Bmatrix}x \\ y \\ z\end{Bmatrix}
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
 Ⓢ(x@y@z)
 ----
-
 
 NOTE: In other conversions, the generated output will resemble the content in the link:../table[Table class]

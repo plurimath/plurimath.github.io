@@ -1,0 +1,1804 @@
+# Source data for the pages under functions/.
+# Each entry gives one example in one source format; the other formats are
+# generated from it with the plurimath gem by `bundle exec rake functions:generate`.
+---
+- name: abs
+  title: "`abs` (unary)"
+  type: unary
+  entries:
+  - anchor: abs
+    heading: Abs
+    source:
+      format: asciimath
+      input: abs(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: align
+  title: "`align` (unary)"
+  type: unary
+  entries:
+  - anchor: align
+    heading: Align
+    source:
+      format: latex
+      input: "\\begin{align}x \\\\ y \\\\ z\\end{align}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: arccos
+  title: "`arccos` (unary)"
+  type: unary
+  entries:
+  - anchor: arccos
+    heading: Arccos
+    source:
+      format: asciimath
+      input: arccos(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: arcsin
+  title: "`arcsin` (unary)"
+  type: unary
+  entries:
+  - anchor: arcsin
+    heading: Arcsin
+    source:
+      format: asciimath
+      input: arcsin(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: arctan
+  title: "`arctan` (unary)"
+  type: unary
+  entries:
+  - anchor: arctan
+    heading: Arctan
+    source:
+      format: asciimath
+      input: arctan(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: arg
+  title: "`arg` (binary)"
+  type: binary
+  entries:
+  - anchor: arg
+    heading: arg
+    source:
+      format: unicodemath
+      input: "ⓐ(d \U0001D451)"
+    formats:
+    - unicodemath
+- name: array
+  title: "`array` (unary)"
+  type: unary
+  entries:
+  - anchor: array
+    heading: Array
+    source:
+      format: latex
+      input: "\\begin{array}.x \\\\ y \\\\ z\\end{array}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: bar
+  title: "`bar` (unary)"
+  type: unary
+  entries:
+  - anchor: bar
+    heading: Bar
+    source:
+      format: asciimath
+      input: bar(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: base
+  title: "`base` (binary)"
+  type: binary
+  entries:
+  - anchor: base
+    heading: Base
+    source:
+      format: asciimath
+      input: x_(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: bmatrix
+  title: "`bmatrix` and `Bmatrix` (unary)"
+  type: unary
+  entries:
+  - anchor: bmatrix
+    heading: bmatrix
+    source:
+      format: latex
+      input: "\\begin{bmatrix}x \\\\ y \\\\ z\\end{bmatrix}"
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+  - anchor: Bmatrix
+    heading: Bmatrix
+    source:
+      format: latex
+      input: "\\begin{Bmatrix}x \\\\ y \\\\ z\\end{Bmatrix}"
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: bold
+  title: "`bold` (unary)"
+  type: unary
+  entries:
+  - anchor: bold
+    heading: Bold
+    source:
+      format: asciimath
+      input: bb(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: boldfraktur
+  title: "`boldfraktur` (unary)"
+  type: unary
+  entries:
+  - anchor: boldfraktur
+    heading: Boldfraktur
+    source:
+      format: unicodemath
+      input: "\\mbffrakx"
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: bolditalic
+  title: "`bolditalic` (unary)"
+  type: unary
+  entries:
+  - anchor: bolditalic
+    heading: Bolditalic
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mstyle mathvariant="bold-italic">
+              <mtext>a</mtext>
+            </mstyle>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a straightforward
+      equation. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: boldsansserif
+  title: "`boldsansserif` (unary)"
+  type: unary
+  entries:
+  - anchor: boldsansserif
+    heading: Boldsansserif
+    source:
+      format: unicodemath
+      input: "\\mbfsansx"
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a straightforward
+      equation. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: boldscript
+  title: "`boldscript` (unary)"
+  type: unary
+  entries:
+  - anchor: boldscript
+    heading: Boldscript
+    source:
+      format: unicodemath
+      input: "\\mbfscrx"
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a straightforward
+      equation. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: cancel
+  title: "`cancel` (unary)"
+  type: unary
+  entries:
+  - anchor: cancel
+    heading: Cancel
+    source:
+      format: asciimath
+      input: cancel(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a straightforward
+      equation. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: cases
+  title: "`cases` (unary)"
+  type: unary
+  entries:
+  - anchor: cases
+    heading: cases
+    source:
+      format: unicodemath
+      input: Ⓒ(1&2@3&4)
+    formats:
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: ceil
+  title: "`ceil` (unary)"
+  type: unary
+  entries:
+  - anchor: ceil
+    heading: Ceil
+    source:
+      format: asciimath
+      input: ceil(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: color
+  title: "`color` (binary)"
+  type: binary
+  entries:
+  - anchor: color
+    heading: Color
+    source:
+      format: asciimath
+      input: color(red)(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: cos
+  title: "`cos` (unary)"
+  type: unary
+  entries:
+  - anchor: cos
+    heading: Cos
+    source:
+      format: asciimath
+      input: cos(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: cosh
+  title: "`cosh` (unary)"
+  type: unary
+  entries:
+  - anchor: cosh
+    heading: Cosh
+    source:
+      format: asciimath
+      input: cosh(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: cot
+  title: "`cot` (unary)"
+  type: unary
+  entries:
+  - anchor: cot
+    heading: Cot
+    source:
+      format: asciimath
+      input: cot(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: coth
+  title: "`coth` (unary)"
+  type: unary
+  entries:
+  - anchor: coth
+    heading: Coth
+    source:
+      format: asciimath
+      input: coth(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: csc
+  title: "`csc` (unary)"
+  type: unary
+  entries:
+  - anchor: csc
+    heading: Csc
+    source:
+      format: asciimath
+      input: csc(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: csch
+  title: "`csch` (unary)"
+  type: unary
+  entries:
+  - anchor: csch
+    heading: Csch
+    source:
+      format: asciimath
+      input: csch(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: ddot
+  title: "`ddot` (unary)"
+  type: unary
+  entries:
+  - anchor: ddot
+    heading: Ddot
+    source:
+      format: asciimath
+      input: ddot(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: deg
+  title: "`deg` (unary)"
+  type: unary
+  entries:
+  - anchor: deg
+    heading: Deg
+    source:
+      format: latex
+      input: "\\deg{( x )}"
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the input of this example in *AsciiMath* will be processed
+      as `d e g \(x\)`.'
+- name: det
+  title: "`det` (unary)"
+  type: unary
+  entries:
+  - anchor: det
+    heading: Det
+    source:
+      format: asciimath
+      input: det(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the *presentation* of this example in *OMML*  will be `det
+      ("x")`.'
+- name: dim
+  title: "`dim` (unary)"
+  type: unary
+  entries:
+  - anchor: dim
+    heading: Dim
+    source:
+      format: asciimath
+      input: dim(x)
+    formats:
+    - asciimath
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the *presentation* of this example in *OMML* will be represented
+      as `dim (x)`.'
+- name: dot
+  title: "`dot` (unary)"
+  type: unary
+  entries:
+  - anchor: dot
+    heading: Dot
+    source:
+      format: asciimath
+      input: dot(x)
+    formats:
+    - asciimath
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a link:../overset[Overset
+      class].'
+- name: doublestruck
+  title: "`doublestruck` (unary)"
+  type: unary
+  entries:
+  - anchor: doublestruck
+    heading: Doublestruck
+    source:
+      format: asciimath
+      input: mathbb(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: eqarray
+  title: "`eqarray` (unary)"
+  type: unary
+  entries:
+  - anchor: eqarray
+    heading: eqarray
+    source:
+      format: unicodemath
+      input: "█(1&2@3&4)"
+    formats:
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: exp
+  title: "`exp` (unary)"
+  type: unary
+  entries:
+  - anchor: exp
+    heading: Exp
+    source:
+      format: asciimath
+      input: exp(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the presentation of this example in *OMML* will be represented
+      as `exp ("x")`.'
+- name: fenced
+  title: "`fenced` (ternary)"
+  type: ternary
+  entries:
+  - anchor: fenced
+    heading: Fenced
+    source:
+      format: asciimath
+      input: "(x)"
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: floor
+  title: "`floor` (unary)"
+  type: unary
+  entries:
+  - anchor: floor
+    heading: Floor
+    source:
+      format: asciimath
+      input: floor(x)
+    formats:
+    - asciimath
+    notes:
+    - 'NOTE: In other conversions, This class will be handled as link:../fenced[fenced].
+      For example, the output of this example in *LaTeX* will be `{\lfloor x \rfloor}`.'
+- name: frac
+  title: "`frac` (binary)"
+  type: binary
+  entries:
+  - anchor: frac
+    heading: Frac
+    source:
+      format: asciimath
+      input: frac(x)(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: fraktur
+  title: "`fraktur` (unary)"
+  type: unary
+  entries:
+  - anchor: fraktur
+    heading: Fraktur
+    source:
+      format: asciimath
+      input: mathfrak(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: gcd
+  title: "`gcd` (unary)"
+  type: unary
+  entries:
+  - anchor: gcd
+    heading: Gcd
+    source:
+      format: asciimath
+      input: gcd(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the presentation of this example in *OMML* will be represented
+      as `gcd ("x")`.'
+- name: glb
+  title: "`glb` (unary)"
+  type: unary
+  entries:
+  - anchor: glb
+    heading: Glb
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mrow>
+              <mi>glb</mi>
+              <mrow>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </math>
+    formats:
+    - asciimath
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of this class will be processed as a
+      simple text. For example, the output of this example in *LaTeX* will be represented
+      as `glb ("x")`.'
+- name: hat
+  title: "`hat` (unary)"
+  type: unary
+  entries:
+  - anchor: hat
+    heading: Hat
+    source:
+      format: asciimath
+      input: hat(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: hom
+  title: "`hom` (unary)"
+  type: unary
+  entries:
+  - anchor: hom
+    heading: Hom
+    source:
+      format: unicodemath
+      input: hom(x)
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `hom (x)`.'
+- name: inf
+  title: "`inf` (binary)"
+  type: binary
+  entries:
+  - anchor: inf
+    heading: Inf
+    source:
+      format: asciimath
+      input: inf_(x)^(y)
+    formats:
+    - asciimath
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../underover[underover class]'
+- name: int
+  title: "`int` (ternary)"
+  type: ternary
+  entries:
+  - anchor: int
+    heading: Int
+    source:
+      format: asciimath
+      input: int_(x)^(y) z
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: intent
+  title: "`intent` (binary)"
+  type: binary
+  entries:
+  - anchor: intent
+    heading: intent
+    source:
+      format: unicodemath
+      input: "ⓘ(\"d\" \U0001D451)"
+    formats:
+    - unicodemath
+- name: italic
+  title: "`italic` (unary)"
+  type: unary
+  entries:
+  - anchor: italic
+    heading: Italic
+    source:
+      format: asciimath
+      input: ii(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: ker
+  title: "`ker` (unary)"
+  type: unary
+  entries:
+  - anchor: ker
+    heading: Ker
+    source:
+      format: unicodemath
+      input: ker(x)
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `ker(x)`.'
+- name: lcm
+  title: "`lcm` (unary)"
+  type: unary
+  entries:
+  - anchor: lcm
+    heading: Lcm
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mrow>
+              <mi>lcm</mi>
+              <mrow>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </math>
+    formats:
+    - asciimath
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *LaTeX* will be represented
+      as `lcm{( x )}`.'
+- name: lg
+  title: "`lg` (unary)"
+  type: unary
+  entries:
+  - anchor: lg
+    heading: Lg
+    source:
+      format: latex
+      input: "\\lg{( x )}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `lg(x)`.'
+- name: lim
+  title: "`lim` (binary)"
+  type: binary
+  entries:
+  - anchor: lim
+    heading: Lim
+    source:
+      format: asciimath
+      input: lim_(x)^(y)
+    formats:
+    - asciimath
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../underover[underover class]'
+- name: liminf
+  title: "`liminf` (unary)"
+  type: unary
+  entries:
+  - anchor: liminf
+    heading: Liminf
+    source:
+      format: latex
+      input: "\\liminf{( x )}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `liminf(x)`.'
+- name: limits
+  title: "`limits` (ternary)"
+  type: ternary
+  entries:
+  - anchor: limits
+    heading: Limits
+    source:
+      format: latex
+      input: "\\int\\limits_{x}^{y}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../underover[underover class]'
+- name: limsup
+  title: "`limsup` (unary)"
+  type: unary
+  entries:
+  - anchor: limsup
+    heading: Limsup
+    source:
+      format: latex
+      input: "\\limsup{( x )}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `limsup(x)`.'
+- name: ln
+  title: "`ln` (unary)"
+  type: unary
+  entries:
+  - anchor: ln
+    heading: Ln
+    source:
+      format: asciimath
+      input: ln(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the presentation of this example in *OMML* will be represented
+      as `ln ("x")`.'
+- name: log
+  title: "`log` (binary)"
+  type: binary
+  entries:
+  - anchor: log
+    heading: Log
+    source:
+      format: asciimath
+      input: log_(x)^(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: longdiv
+  title: "`longdiv` (unary)"
+  type: unary
+  entries:
+  - anchor: longdiv
+    heading: Longdiv
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mlongdiv>
+              <mo>(</mo>
+              <mi>x</mi>
+              <mo>)</mo>
+            </mlongdiv>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `(x)`.'
+- name: lub
+  title: "`lub` (unary)"
+  type: unary
+  entries:
+  - anchor: lub
+    heading: Lub
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mrow>
+              <mi>lub</mi>
+              <mrow>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </mstyle>
+        </math>
+    formats:
+    - asciimath
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *LaTeX* will be represented
+      as `lub (x)`.'
+- name: matrix
+  title: "`matrix` (unary)"
+  type: unary
+  entries:
+  - anchor: matrix
+    heading: Matrix
+    source:
+      format: latex
+      input: "\\begin{matrix}x \\\\ y \\\\ z\\end{matrix}"
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: max
+  title: "`max` (unary)"
+  type: unary
+  entries:
+  - anchor: max
+    heading: Max
+    source:
+      format: asciimath
+      input: max(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the *presentation* of this example in *OMML*  will be `max
+      ("x")`.'
+- name: mbox
+  title: "`mbox` (unary)"
+  type: unary
+  entries:
+  - anchor: mbox
+    heading: Mbox
+    source:
+      format: latex
+      input: "\\mbox{( x )}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../text[Text class]'
+- name: menclose
+  title: "`menclose` (unary)"
+  type: unary
+  entries:
+  - anchor: menclose
+    heading: Menclose
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <menclose notation="box">
+              <mi>x</mi>
+            </menclose>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    - omml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `(x)`.'
+- name: merror
+  title: "`merror` (unary)"
+  type: unary
+  entries:
+  - anchor: merror
+    heading: Merror
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <merror>
+              <mi>x</mi>
+            </merror>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will not be processed at
+      all.'
+- name: min
+  title: "`min` (unary)"
+  type: unary
+  entries:
+  - anchor: min
+    heading: Min
+    source:
+      format: asciimath
+      input: min(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the *presentation* of this example in *OMML*  will be `min
+      ("x")`.'
+- name: mlabeledtr
+  title: "`mlabeledtr` (binary)"
+  type: binary
+  entries:
+  - anchor: mlabeledtr
+    heading: mlabeledtr
+    source:
+      format: unicodemath
+      input: "\U0001D451 #[2]"
+    formats:
+    - unicodemath
+- name: mod
+  title: "`mod` (binary)"
+  type: binary
+  entries:
+  - anchor: mod
+    heading: Mod
+    source:
+      format: asciimath
+      input: x mod y
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the *presentation* of this example in *OMML*  will be `"x"
+      rm( mod ) "y"`.'
+- name: monospace
+  title: "`monospace` (unary)"
+  type: unary
+  entries:
+  - anchor: monospace
+    heading: Monospace
+    source:
+      format: asciimath
+      input: mathtt(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: msgroup
+  title: "`msgroup` (unary)"
+  type: unary
+  entries:
+  - anchor: msgroup
+    heading: Msgroup
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mrow>
+              <msgroup>
+                <mo>(</mo>
+                <mi>x</mi>
+                <mo>)</mo>
+              </msgroup>
+            </mrow>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `(x)`.'
+- name: multline
+  title: "`multline` (unary)"
+  type: unary
+  entries:
+  - anchor: multline
+    heading: Multline
+    source:
+      format: latex
+      input: "\\begin{multline}x \\\\ y \\\\ z\\end{multline}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: n-ary
+  title: "`n-ary` (binary)"
+  type: binary
+  entries:
+  - anchor: n-ary
+    heading: N-ary
+    source:
+      format: omml
+      input: |-
+        <m:oMathPara>
+          <m:oMath>
+            <m:nary>
+              <m:naryPr>
+                <m:chr m:val="v"/>
+                <m:limLoc m:val="subSup"/>
+                <m:subHide m:val="0"/>
+                <m:supHide m:val="0"/>
+              </m:naryPr>
+              <m:sub>
+                <m:r>
+                  <m:t>x</m:t>
+                </m:r>
+              </m:sub>
+              <m:sup>
+                <m:r>
+                  <m:t>y</m:t>
+                </m:r>
+              </m:sup>
+              <m:e>
+                <m:r>
+                  <m:t>z</m:t>
+                </m:r>
+              </m:e>
+            </m:nary>
+          </m:oMath>
+        </m:oMathPara>
+    formats:
+    - omml
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../powerbase[PowerBase class]'
+- name: norm
+  title: "`norm` (unary)"
+  type: unary
+  entries:
+  - anchor: norm
+    heading: Norm
+    source:
+      format: asciimath
+      input: norm(x)
+    formats:
+    - asciimath
+    notes:
+    - 'NOTE: In other conversions, This class will be handled as link:../fenced[fenced].
+      For example, the output of this example in *LaTeX* will be `{\lVert x \rVert}`.'
+- name: normal
+  title: "`normal` (unary)"
+  type: unary
+  entries:
+  - anchor: normal
+    heading: Normal
+    source:
+      format: asciimath
+      input: rm(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: obrace
+  title: "`obrace` (unary)"
+  type: unary
+  entries:
+  - anchor: obrace
+    heading: Obrace
+    source:
+      format: asciimath
+      input: obrace(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: oint
+  title: "`oint` (ternary)"
+  type: ternary
+  entries:
+  - anchor: oint
+    heading: Oint
+    source:
+      format: asciimath
+      input: oint_(x)^(y) z
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: over
+  title: "`over` (binary)"
+  type: binary
+  entries:
+  - anchor: over
+    heading: Over
+    source:
+      format: latex
+      input: "{x \\over y}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../frac[Frac class]'
+- name: overset
+  title: "`overset` (binary)"
+  type: binary
+  entries:
+  - anchor: overset
+    heading: Overset
+    source:
+      format: asciimath
+      input: overset(x)(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: phantom
+  title: "`phantom` (unary)"
+  type: unary
+  entries:
+  - anchor: phantom
+    heading: Phantom
+    source:
+      format: latex
+      input: "\\phantom{x}"
+    formats:
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In AsciiMath conversion, it will add `\ ` replacing all the letters as
+      value of the object. For example, the output of this example in *AsciiMath*
+      will be `\ `.'
+- name: pmatrix
+  title: "`pmatrix` (unary)"
+  type: unary
+  entries:
+  - anchor: pmatrix
+    heading: Pmatrix
+    source:
+      format: latex
+      input: "\\begin{pmatrix}x \\\\ y \\\\ z\\end{pmatrix}"
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: power
+  title: "`power` (binary)"
+  type: binary
+  entries:
+  - anchor: power
+    heading: Power
+    source:
+      format: asciimath
+      input: x^(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: powerbase
+  title: "`powerbase` (ternary)"
+  type: ternary
+  entries:
+  - anchor: powerbase
+    heading: Powerbase
+    source:
+      format: asciimath
+      input: x_(y)^(z)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: prod
+  title: "`prod` (ternary)"
+  type: ternary
+  entries:
+  - anchor: prod
+    heading: Prod
+    source:
+      format: asciimath
+      input: prod_(x)^(y) z
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: root
+  title: "`root` (binary)"
+  type: binary
+  entries:
+  - anchor: root
+    heading: Root
+    source:
+      format: asciimath
+      input: root(x)(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: rule
+  title: "`rule` (ternary)"
+  type: ternary
+  entries:
+  - anchor: rule
+    heading: Rule
+    source:
+      format: latex
+      input: "\\rule[5pt]{5pt}{5pt}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversion, this class will not return any presentational output.'
+- name: sansserif
+  title: "`sansserif` (unary)"
+  type: unary
+  entries:
+  - anchor: sansserif
+    heading: Sansserif
+    source:
+      format: asciimath
+      input: mathsf(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: sansserifbolditalic
+  title: "`sansserifbolditalic` (unary)"
+  type: unary
+  entries:
+  - anchor: sansserifbolditalic
+    heading: Sansserifbolditalic
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mstyle mathvariant="sans-serif-bold-italic">
+              <mtext>x</mtext>
+            </mstyle>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: sansserifitalic
+  title: "`sansserifitalic` (unary)"
+  type: unary
+  entries:
+  - anchor: sansserifitalic
+    heading: Sansserifitalic
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mstyle mathvariant="sans-serif-italic">
+              <mi>x</mi>
+            </mstyle>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: scarries
+  title: "`scarries` (unary)"
+  type: unary
+  entries:
+  - anchor: scarries
+    heading: Scarries
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <mscarries>
+              <mo>(</mo>
+              <mi>x</mi>
+              <mo>)</mo>
+            </mscarries>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `(x)`.'
+- name: script
+  title: "`script` (unary)"
+  type: unary
+  entries:
+  - anchor: script
+    heading: Script
+    source:
+      format: asciimath
+      input: mathcal(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: sec
+  title: "`sec` (unary)"
+  type: unary
+  entries:
+  - anchor: sec
+    heading: Sec
+    source:
+      format: asciimath
+      input: sec(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: sech
+  title: "`sech` (unary)"
+  type: unary
+  entries:
+  - anchor: sech
+    heading: Sech
+    source:
+      format: asciimath
+      input: sech(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: semantics
+  title: "`semantics` (binary)"
+  type: binary
+  entries:
+  - anchor: semantics
+    heading: Semantics
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <semantics>
+              <mi>x</mi>
+              <annotation>
+                <mi>MathType@MTEF@5@5@+= feaagKart1ev2aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbbjxAHX garuavP1wzZbItLDhis9wBH5garmWu51MyVXgarqqtubsr4rNCHbGe aGqipG0dh9qqWrVepG0dbbL8F4rqqrVepeea0xe9LqFf0xc9q8qqaq Fn0lXdHiVcFbIOFHK8Feea0dXdar=Jb9hs0dXdHuk9fr=xfr=xfrpe WZqaaeaaciWacmGadaGadeaabaGaaqaaaOqaamaapedabaGaamOzai aacIcacaWG0bGaaiykaKqzaeGaaiizaOGaamiDaaWcbaGaamiDamaa BaaameaacaaIYaaabeaaaSqaaiaadshadaWgaaadbaGaaGymaaqaba aaniabgUIiYdaaaa@40DD@ </mi>
+              </annotation>
+            </semantics>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `x`.'
+- name: sin
+  title: "`sin` (unary)"
+  type: unary
+  entries:
+  - anchor: sin
+    heading: Sin
+    source:
+      format: asciimath
+      input: sin(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: sinh
+  title: "`sinh` (unary)"
+  type: unary
+  entries:
+  - anchor: sinh
+    heading: Sinh
+    source:
+      format: asciimath
+      input: sinh(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: split
+  title: "`split` (unary)"
+  type: unary
+  entries:
+  - anchor: split
+    heading: Split
+    source:
+      format: latex
+      input: "\\begin{split}x \\\\ y \\\\ z\\end{split}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: sqrt
+  title: "`sqrt` (unary)"
+  type: unary
+  entries:
+  - anchor: sqrt
+    heading: Sqrt
+    source:
+      format: asciimath
+      input: sqrt(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: stackrel
+  title: "`stackrel` (binary)"
+  type: binary
+  entries:
+  - anchor: stackrel
+    heading: Stackrel
+    source:
+      format: asciimath
+      input: stackrel(x)(y)
+    formats:
+    - asciimath
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../overset[Overset class]'
+- name: substack
+  title: "`substack` (unary)"
+  type: unary
+  entries:
+  - anchor: substack
+    heading: Substack
+    source:
+      format: latex
+      input: "\\substack{x & x \\\\ y & z}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'
+- name: sum
+  title: "`sum` (ternary)"
+  type: ternary
+  entries:
+  - anchor: sum
+    heading: Sum
+    source:
+      format: asciimath
+      input: sum_(x)^(y) z
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: sup
+  title: "`sup` (unary)"
+  type: unary
+  entries:
+  - anchor: sup
+    heading: Sup
+    source:
+      format: latex
+      input: "\\sup{( x )}"
+    formats:
+    - latex
+    notes:
+    - 'NOTE: In other conversions, the value of the class will be processed as a simple
+      text. For example, the output of this example in *AsciiMath* will be represented
+      as `sup(x)`.'
+- name: table
+  title: "`table` (unary)"
+  type: unary
+  entries:
+  - anchor: table
+    heading: Table
+    source:
+      format: asciimath
+      input: "[[x], [y]]"
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: tan
+  title: "`tan` (unary)"
+  type: unary
+  entries:
+  - anchor: tan
+    heading: Tan
+    source:
+      format: asciimath
+      input: tan(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: tanh
+  title: "`tanh` (unary)"
+  type: unary
+  entries:
+  - anchor: tanh
+    heading: Tanh
+    source:
+      format: asciimath
+      input: tanh(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: text
+  title: "`text` (unary)"
+  type: unary
+  entries:
+  - anchor: text
+    heading: Text
+    source:
+      format: asciimath
+      input: '"x"'
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: tilde
+  title: "`tilde` (unary)"
+  type: unary
+  entries:
+  - anchor: tilde
+    heading: Tilde
+    source:
+      format: asciimath
+      input: tilde(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: ubrace
+  title: "`ubrace` (unary)"
+  type: unary
+  entries:
+  - anchor: ubrace
+    heading: Ubrace
+    source:
+      format: asciimath
+      input: ubrace(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: ul
+  title: "`ul` (unary)"
+  type: unary
+  entries:
+  - anchor: ul
+    heading: Ul
+    source:
+      format: asciimath
+      input: ul(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: underover
+  title: "`underover` (ternary)"
+  type: ternary
+  entries:
+  - anchor: underover
+    heading: Underover
+    source:
+      format: mathml
+      input: |-
+        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <mstyle displaystyle="true">
+            <munderover>
+              <mi>x</mi>
+              <mi>y</mi>
+              <mi>z</mi>
+            </munderover>
+          </mstyle>
+        </math>
+    formats:
+    - mathml
+    - omml
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../powerbase[PowerBase class]'
+- name: underset
+  title: "`underset` (binary)"
+  type: binary
+  entries:
+  - anchor: underset
+    heading: Underset
+    source:
+      format: asciimath
+      input: underset(x)(y)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+    - unicodemath
+- name: vec
+  title: "`vec` (unary)"
+  type: unary
+  entries:
+  - anchor: vec
+    heading: Vec
+    source:
+      format: asciimath
+      input: vec(x)
+    formats:
+    - asciimath
+    - latex
+    - mathml
+    - omml
+- name: vmatrix
+  title: "`vmatrix` and `Vmatrix` (unary)"
+  type: unary
+  entries:
+  - anchor: vmatrix
+    heading: vmatrix
+    source:
+      format: latex
+      input: "\\begin{vmatrix}x \\\\ y \\\\ z\\end{vmatrix}"
+    formats:
+    - latex
+    - unicodemath
+  - anchor: Vmatrix
+    heading: Vmatrix
+    source:
+      format: latex
+      input: "\\begin{Vmatrix}x \\\\ y \\\\ z\\end{Vmatrix}"
+    formats:
+    - latex
+    - unicodemath
+    notes:
+    - 'NOTE: In other conversions, the generated output will resemble the content
+      in the link:../table[Table class]'

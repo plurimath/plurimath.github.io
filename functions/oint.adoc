@@ -15,14 +15,12 @@ function-type: ternary
 oint_(x)^(y) z
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \oint_{x}^{y} z
 ----
-
 
 === MathML
 
@@ -41,7 +39,6 @@ oint_(x)^(y) z
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -76,10 +73,9 @@ oint_(x)^(y) z
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-∮_(d)^(x)▒〖e〗
+∮_(x)^(y)▒〖z〗
 ----

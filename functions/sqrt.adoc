@@ -15,14 +15,12 @@ function-type: unary
 sqrt(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \sqrt{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ sqrt(x)
 </math>
 ----
 
-
 === OMML
 
 [source,xml]
@@ -46,7 +43,7 @@ sqrt(x)
   <m:oMath>
     <m:rad>
       <m:radPr>
-        <m:degHide m:val="1"/>
+        <m:degHide m:val="on"/>
         <m:ctrlPr>
           <w:rPr>
             <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
@@ -65,12 +62,9 @@ sqrt(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-sqrt(x)
+√(x)
 ----
-
-

@@ -15,5 +15,4 @@ function-type: ternary
 \int\limits_{x}^{y}
 ----
 
-
 NOTE: In other conversions, the generated output will resemble the content in the link:../underover[underover class]

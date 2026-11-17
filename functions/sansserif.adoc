@@ -15,14 +15,12 @@ function-type: unary
 mathsf(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathsf{x}
 ----
-
 
 === MathML
 
@@ -36,7 +34,6 @@ mathsf(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -55,10 +52,9 @@ mathsf(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-\msans(x)
+\msansx
 ----

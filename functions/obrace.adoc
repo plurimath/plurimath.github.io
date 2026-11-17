@@ -15,14 +15,12 @@ function-type: unary
 obrace(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \overbrace{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ obrace(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,4 +65,3 @@ obrace(x)
   </m:oMath>
 </m:oMathPara>
 ----
-

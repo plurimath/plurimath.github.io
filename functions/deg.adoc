@@ -15,13 +15,11 @@ function-type: unary
 \deg{( x )}
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
 deg⁡(x)
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the input of this example in *AsciiMath* will be processed as `d e g \(x\)`.

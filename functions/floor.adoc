@@ -15,5 +15,4 @@ function-type: unary
 floor(x)
 ----
 
-
 NOTE: In other conversions, This class will be handled as link:../fenced[fenced]. For example, the output of this example in *LaTeX* will be `{\lfloor x \rfloor}`.

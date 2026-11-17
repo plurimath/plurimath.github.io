@@ -15,14 +15,12 @@ function-type: unary
 mathfrak(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathfrak{x}
 ----
-
 
 === MathML
 
@@ -36,7 +34,6 @@ mathfrak(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -54,7 +51,6 @@ mathfrak(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

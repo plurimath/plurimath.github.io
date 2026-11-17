@@ -62,6 +62,22 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Install function page generator
+        run: bundle install
+        env:
+          BUNDLE_GEMFILE: _tasks/Gemfile
+
+      - name: Check generated function pages
+        if: ${{ github.event_name == 'pull_request' }}
+        run: bundle exec rake functions:check
+        env:
+          BUNDLE_GEMFILE: _tasks/Gemfile
+
+      - name: Generate function pages
+        run: bundle exec rake functions:generate
+        env:
+          BUNDLE_GEMFILE: _tasks/Gemfile
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4

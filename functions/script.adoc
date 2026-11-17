@@ -15,14 +15,12 @@ function-type: unary
 mathcal(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \mathcal{x}
 ----
-
 
 === MathML
 
@@ -36,7 +34,6 @@ mathcal(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -54,7 +51,6 @@ mathcal(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
 
 === UnicodeMath
 

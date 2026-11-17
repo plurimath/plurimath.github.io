@@ -15,14 +15,12 @@ function-type: unary
 sin(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \sin{( x )}
 ----
-
 
 === MathML
 
@@ -31,17 +29,19 @@ sin(x)
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true">
     <mrow>
-      <mi>sin</mi>
+      <mo rspace="thickmathspace"/>
       <mrow>
-        <mo>(</mo>
-        <mi>x</mi>
-        <mo>)</mo>
+        <mi>sin</mi>
+        <mrow>
+          <mo>(</mo>
+          <mi>x</mi>
+          <mo>)</mo>
+        </mrow>
       </mrow>
     </mrow>
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -70,13 +70,8 @@ sin(x)
         <m:d>
           <m:dPr>
             <m:begChr m:val="("/>
+            <m:sepChr m:val=""/>
             <m:endChr m:val=")"/>
-            <m:ctrlPr>
-              <w:rPr>
-                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-                <w:i/>
-              </w:rPr>
-            </m:ctrlPr>
           </m:dPr>
           <m:e>
             <m:r>
@@ -90,10 +85,9 @@ sin(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-sin(x)
+sin⁡(x)
 ----

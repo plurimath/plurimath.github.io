@@ -15,14 +15,12 @@ function-type: unary
 csc(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \csc{( x )}
 ----
-
 
 === MathML
 
@@ -31,17 +29,19 @@ csc(x)
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true">
     <mrow>
-      <mi>csc</mi>
+      <mo rspace="thickmathspace"/>
       <mrow>
-        <mo>(</mo>
-        <mi>x</mi>
-        <mo>)</mo>
+        <mi>csc</mi>
+        <mrow>
+          <mo>(</mo>
+          <mi>x</mi>
+          <mo>)</mo>
+        </mrow>
       </mrow>
     </mrow>
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -70,13 +70,8 @@ csc(x)
         <m:d>
           <m:dPr>
             <m:begChr m:val="("/>
+            <m:sepChr m:val=""/>
             <m:endChr m:val=")"/>
-            <m:ctrlPr>
-              <w:rPr>
-                <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
-                <w:i/>
-              </w:rPr>
-            </m:ctrlPr>
           </m:dPr>
           <m:e>
             <m:r>
@@ -90,10 +85,9 @@ csc(x)
 </m:oMathPara>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-csc(x)
+csc⁡(x)
 ----

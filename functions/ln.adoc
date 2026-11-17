@@ -15,14 +15,12 @@ function-type: unary
 ln(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \ln{( x )}
 ----
-
 
 === MathML
 
@@ -31,24 +29,25 @@ ln(x)
 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <mstyle displaystyle="true">
     <mrow>
-      <mi>ln</mi>
+      <mo rspace="thickmathspace"/>
       <mrow>
-        <mo>(</mo>
-        <mi>x</mi>
-        <mo>)</mo>
+        <mi>ln</mi>
+        <mrow>
+          <mo>(</mo>
+          <mi>x</mi>
+          <mo>)</mo>
+        </mrow>
       </mrow>
     </mrow>
   </mstyle>
 </math>
 ----
 
-
 === UnicodeMath
 
 [source,unicodemath]
 ----
-ln(x)
+ln⁡(x)
 ----
-
 
 NOTE: In other conversions, the value of the class will be processed as a simple text. For example, the presentation of this example in *OMML* will be represented as `ln ("x")`.

@@ -15,7 +15,6 @@ function-type: unary
 glb(x)
 ----
 
-
 === MathML
 
 [source,xml]
@@ -33,6 +32,5 @@ glb(x)
   </mstyle>
 </math>
 ----
-
 
 NOTE: In other conversions, the value of this class will be processed as a simple text. For example, the output of this example in *LaTeX* will be represented as `glb ("x")`.

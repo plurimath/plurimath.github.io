@@ -15,14 +15,12 @@ function-type: unary
 ul(x)
 ----
 
-
 === LaTeX
 
 [source,latex]
 ----
 \underline{x}
 ----
-
 
 === MathML
 
@@ -37,7 +35,6 @@ ul(x)
   </mstyle>
 </math>
 ----
-
 
 === OMML
 
@@ -68,5 +65,3 @@ ul(x)
   </m:oMath>
 </m:oMathPara>
 ----
-
-
